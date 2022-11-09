@@ -1,4 +1,4 @@
-name: 自动采集
+name: encode
 
 # 触发条件
 on:
@@ -18,9 +18,9 @@ jobs:
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
     - name: 执行任务
       run: |
-         rm ./nodeencode.txt
+         rm ./nodeencode
          wget --no-check-certificate ${{ secrets.Check_File }} -O ./nodelist.txt -q
-         base64 ./nodelist.txt > nodeencode.txt
+         base64 ./nodelist.txt > nodeencode
          rm ./nodelist.txt
     - name: 提交更改
       run: |
