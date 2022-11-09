@@ -19,9 +19,9 @@ jobs:
     - name: 执行任务
       run: |
          rm ./nodeencode
-         wget --no-check-certificate ${{ secrets.Check_File }} -O ./nodelist.txt -q
-         base64 ./nodelist.txt > nodeencode -w 0
-         rm ./nodelist.txt
+         wget ${{ secrets.Check_File }} -O ./nodelist -q
+         base64 ./nodelist > nodeencode -w 0
+         rm ./nodelist
     - name: 提交更改
       run: |
          git config core.ignorecase false
