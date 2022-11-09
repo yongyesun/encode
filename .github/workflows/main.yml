@@ -1,0 +1,32 @@
+name: 自动采集
+
+# 触发条件
+on:
+  workflow_dispatch:
+  # 定时触发
+  #schedule:
+    # 每6小时获取一次
+    #- cron: '0 */12 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 迁出代码
+      uses: actions/checkout@v2
+    - name: 设置时区
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+    - name: 执行任务
+      run: |
+         rm ./nodeencode.txt
+         wget --no-check-certificate ${{ secrets.Check_File }} -O ./nodelist.txt -q
+         base64 ./nodelist.txt > nodeencode.txt
+         rm ./nodelist.txt
+    - name: 提交更改
+      run: |
+         git config core.ignorecase false
+         git config --local user.email "actions@github.com"
+         git config --local user.name "GitHub Actions"
+         git add .
+         git commit -m "$(date '+%Y-%m-%d %H:%M:%S')更新"
+         git push
