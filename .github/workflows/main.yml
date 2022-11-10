@@ -21,7 +21,7 @@ jobs:
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
     - name: 安装pip包
       run: | 
-         pip install -r ./utils/pool/requirements.txt
+         pip install -r ./requirements.txt
     - name: 执行任务
       run: |
          rm ./nodeencode
