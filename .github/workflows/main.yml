@@ -32,6 +32,7 @@ jobs:
          tar -zxvf subconverter_armv7.tar.gz
          cp ./nodeencode ./subconverter
          cp -rf ./generate.ini ./subconverter
+         ls
          ./subconverter/subconverter -g --artifact "node"
          cp ./subconverter/input.yaml ./
          python main.py
