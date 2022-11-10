@@ -1,7 +1,7 @@
 import time
 import yaml
 from yaml.loader import SafeLoader
-from parse import parse, makeclash
+from parse import makeclash
 from clash import push
         
 proxy_list=[]
