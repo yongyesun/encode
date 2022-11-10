@@ -28,7 +28,7 @@ jobs:
          wget ${{ secrets.Check_File }} -O ./nodelist -q
          base64 ./nodelist > nodeencode -w 0
          #rm ./nodelist
-         wget https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_armv7.tar.gz
+         wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_armv7.tar.gz
          tar -zxvf subconverter_armv7.tar.gz
          cp ./nodeencode ./subconverter && cp -rf ./generate.ini ./subconverter
          ./subconverter/subconverter -g --artifact "node" && cp ./subconverter/input.yaml ./
