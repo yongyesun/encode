@@ -40,4 +40,5 @@ jobs:
          git config --local user.name "GitHub Actions"
          git add .
          git commit -m "$(date '+%Y-%m-%d %H:%M:%S')更新"
-         git push
+         git pull origin main
+         git push origin main
