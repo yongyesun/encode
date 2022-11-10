@@ -4,38 +4,24 @@ name: encode
 on:
   workflow_dispatch:
   # 定时触发
-  #schedule:
+  schedule:
     # 每6小时获取一次
-    #- cron: '0 */12 * * *'
+    - cron: '0 */12 * * *'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3     #git clone
-    - uses: actions/setup-python@v4 #python环境
-      with:
-        python-version: '3.x'       #python 3.x
-        cache: 'pip'                #pip cache
+    - name: 迁出代码
+      uses: actions/checkout@v2
     - name: 设置时区
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
-    - name: 安装pip包
-      run: | 
-         pip install -r ./requirements.txt
     - name: 执行任务
       run: |
          rm ./nodeencode
          wget ${{ secrets.Check_File }} -O ./nodelist -q
          base64 ./nodelist > nodeencode -w 0
-         #rm ./nodelist
-         wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz
-         tar -zxvf subconverter_linux32.tar.gz
-         cp ./nodeencode ./subconverter
-         cp -rf ./generate.ini ./subconverter
-         ./subconverter/subconverter -g --artifact "node"
-         ls
-         cp ./subconverter/input.yaml ./
-         python main.py
+         rm ./nodelist
     - name: 提交更改
       run: |
          git config core.ignorecase false
