@@ -8,9 +8,7 @@ proxy_list=[]
 
 if __name__ == '__main__':
   nodes = 'input.yaml'
-  with open(nodes, encoding = 'utf-8').read() as reader:
-                utf8_to_unicode =  reader.decode("utf-8")
-                reader = utf8_to_unicode.encode("utf-8")
+  with open(nodes, 'r') as reader:
                 working = yaml.load(reader, Loader=SafeLoader)
                 for x in working['proxies']:
                         proxy_list.append(x)
