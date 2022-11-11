@@ -2730,6 +2730,7 @@ proxies:
   - {name: daili 2697, server: az.hk01.paopaocloud.cyou, port: 10003, type: vmess, uuid: d8c5b486-84bb-3887-a1d9-07455ea608f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: paopao.v2.hk05.paopaocloud.cyou}}, udp: true}
   - {name: daili 2698, server: 152.69.197.60, port: 1069, type: vmess, uuid: ac8e26fe-8150-4b60-ae64-82fc77eba2cf, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
   - {name: daili 2699, server: 188.114.97.111, port: 443, type: vmess, uuid: 9e6ceeff-2546-3690-ac00-6fcdf31dec94, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /chcara, headers: {Host: v2fly.samrt.website}}, udp: true}
+  - {name: daili 2700, server: ip.skk.moe, port: 80, type: vmess, uuid: a1467cc8-0956-4016-c83b-46fd54d15347, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /aries, headers: {Host: aws-us.cloudflare.quest}}, udp: true}
 proxy-groups:
   - name: Proxy
     type: select
@@ -5459,6 +5460,7 @@ proxy-groups:
       - daili 2697
       - daili 2698
       - daili 2699
+      - daili 2700
       - AUTO
       - DIRECT
   - name: AUTO
@@ -8191,4 +8193,5 @@ proxy-groups:
       - daili 2697
       - daili 2698
       - daili 2699
+      - daili 2700
 rules: ~
