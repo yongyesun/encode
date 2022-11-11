@@ -2738,6 +2738,9 @@ proxies:
   - {name: daili 2705, server: sg.securevpn.cc, port: 1020, type: ss, cipher: aes-128-gcm, password: !<str> 202211000000000000000020, plugin: obfs, plugin-opts: {mode: http, host: securevpn.cc}, udp: true}
   - {name: daili 2706, server: us1.awslcn.cc, port: 25239, type: vmess, uuid: 767bca1a-1b03-47a1-91e1-1f8c3ed64292, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: us1.awslcn.cc}}, udp: true}
   - {name: daili 2707, server: hk1.awslcn.cc, port: 25242, type: vmess, uuid: 767bca1a-1b03-47a1-91e1-1f8c3ed64292, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: hk1.awslcn.cc}}, udp: true}
+  - {name: daili 2708, server: gz.baibianxiaoying.top, port: 20630, type: vmess, uuid: bc0ece90-7e4b-3783-94a7-fb972b6bc73e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: daili 2709, server: gz.baibianxiaoying.top, port: 20630, type: vmess, uuid: bc0ece90-7e4b-3783-94a7-fb972b6bc73e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: daili 2710, server: zz.baibianxiaoying.top, port: 20630, type: vmess, uuid: bc0ece90-7e4b-3783-94a7-fb972b6bc73e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
 proxy-groups:
   - name: Proxy
     type: select
@@ -5475,6 +5478,9 @@ proxy-groups:
       - daili 2705
       - daili 2706
       - daili 2707
+      - daili 2708
+      - daili 2709
+      - daili 2710
       - AUTO
       - DIRECT
   - name: AUTO
@@ -8215,4 +8221,7 @@ proxy-groups:
       - daili 2705
       - daili 2706
       - daili 2707
+      - daili 2708
+      - daili 2709
+      - daili 2710
 rules: ~
