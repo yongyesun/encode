@@ -1,5 +1,5 @@
 import time
-#import yaml
+import yaml
 #from yaml.loader import SafeLoader
 from parse import makeclash
 from clash import push
