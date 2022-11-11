@@ -14,7 +14,7 @@ def push(list):
     vmess_supported_ciphers = ['auto', 'aes-128-gcm', 'chacha20-poly1305', 'none']
     passlist = []
     iplist = {}
-    passlist = []
+    #passlist = []
     count = 1
     clash = {'proxies': [], 'proxy-groups': [
             {'name': 'automatic', 'type': 'url-test', 'proxies': [], 'url': 'https://www.google.com/favicon.ico',
@@ -42,7 +42,8 @@ def push(list):
                         if country != 'CN':
                             if ip in iplist:
                                 ss_omit_ip_dupe = ss_omit_ip_dupe + 1
-                                continue
+                                #continue
+                                pass
                             else:
                                 iplist[ip] = []
                                 iplist[ip].append(x['port'])
@@ -60,7 +61,8 @@ def push(list):
                             continue
                         if country != 'CN':
                             if ip in iplist:
-                                continue
+                                #continue
+                                pass
                             else:
                                 iplist.append(ip)
                                 iplist[ip].append(x['port'])
@@ -135,12 +137,15 @@ def push(list):
                         continue
                 else:
                     continue
+                       
                 if ip in iplist and x['port'] in iplist[ip]:
                     if country != 'CN':
-                        continue
+                        pass
+                        #continue
                     else:
                         if x[authentication] in passlist:
-                            continue
+                            pass
+                            #continue
                         else:
                             passlist.append(x[authentication])
                 else:
@@ -149,7 +154,7 @@ def push(list):
                     except:
                         iplist[ip] = []
                         iplist[ip].append(x['port'])
-
+  
                 clash['proxies'].append(x)
                 clash['proxy-groups'][0]['proxies'].append(x['name'])
                 clash['proxy-groups'][1]['proxies'].append(x['name'])
