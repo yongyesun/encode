@@ -49,7 +49,9 @@ jobs:
         name: .input_${{ env.Compile_Date }}
         path: input.yaml
     - name: 执行任务2
-      run:  python main.py 
+      run:  |
+        python main.py
+        rm -rf ./__pycache__
     - name: 提交更改
       run: |
          git config core.ignorecase false
