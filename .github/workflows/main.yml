@@ -38,7 +38,7 @@ jobs:
          cp ./test_profile.ini ./subconverter
          cp ./example_external_config.ini ./subconverter
          ./subconverter/subconverter -g --artifact "node"
-         cp ./subconverter/input.yaml ./
+         cp ./subconverter/base64 ./
          rm -rf ./subconverter
     - name: 提交更改
       run: |
