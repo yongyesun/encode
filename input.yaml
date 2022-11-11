@@ -2731,6 +2731,13 @@ proxies:
   - {name: daili 2698, server: 152.69.197.60, port: 1069, type: vmess, uuid: ac8e26fe-8150-4b60-ae64-82fc77eba2cf, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
   - {name: daili 2699, server: 188.114.97.111, port: 443, type: vmess, uuid: 9e6ceeff-2546-3690-ac00-6fcdf31dec94, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /chcara, headers: {Host: v2fly.samrt.website}}, udp: true}
   - {name: daili 2700, server: ip.skk.moe, port: 80, type: vmess, uuid: a1467cc8-0956-4016-c83b-46fd54d15347, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /aries, headers: {Host: aws-us.cloudflare.quest}}, udp: true}
+  - {name: daili 2701, server: jp.securevpn.cc, port: 1020, type: ss, cipher: aes-128-gcm, password: !<str> 202211000000000000000020, plugin: obfs, plugin-opts: {mode: http, host: securevpn.cc}, udp: true}
+  - {name: daili 2702, server: dosg.securevpn.cc, port: 1020, type: ss, cipher: aes-128-gcm, password: !<str> 202211000000000000000020, plugin: obfs, plugin-opts: {mode: http, host: securevpn.cc}, udp: true}
+  - {name: daili 2703, server: do.us.securevpn.cc, port: 1020, type: ss, cipher: aes-128-gcm, password: !<str> 202211000000000000000020, plugin: obfs, plugin-opts: {mode: http, host: securevpn.cc}, udp: true}
+  - {name: daili 2704, server: cn1.cdn.zeroteam.top, port: 40026, type: vmess, uuid: 2adb20ea-2c0c-41ba-be47-877500172bc2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: omo.uitsrt.top, network: h2, h2-opts: {path: /, host: [cn1.cdn.zeroteam.top]}, udp: true}
+  - {name: daili 2705, server: sg.securevpn.cc, port: 1020, type: ss, cipher: aes-128-gcm, password: !<str> 202211000000000000000020, plugin: obfs, plugin-opts: {mode: http, host: securevpn.cc}, udp: true}
+  - {name: daili 2706, server: us1.awslcn.cc, port: 25239, type: vmess, uuid: 767bca1a-1b03-47a1-91e1-1f8c3ed64292, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: us1.awslcn.cc}}, udp: true}
+  - {name: daili 2707, server: hk1.awslcn.cc, port: 25242, type: vmess, uuid: 767bca1a-1b03-47a1-91e1-1f8c3ed64292, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: hk1.awslcn.cc}}, udp: true}
 proxy-groups:
   - name: Proxy
     type: select
@@ -5461,6 +5468,13 @@ proxy-groups:
       - daili 2698
       - daili 2699
       - daili 2700
+      - daili 2701
+      - daili 2702
+      - daili 2703
+      - daili 2704
+      - daili 2705
+      - daili 2706
+      - daili 2707
       - AUTO
       - DIRECT
   - name: AUTO
@@ -8194,4 +8208,11 @@ proxy-groups:
       - daili 2698
       - daili 2699
       - daili 2700
+      - daili 2701
+      - daili 2702
+      - daili 2703
+      - daili 2704
+      - daili 2705
+      - daili 2706
+      - daili 2707
 rules: ~
