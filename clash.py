@@ -165,3 +165,7 @@ def push(list):
 
     with open('output.yaml', 'w') as writer:
         yaml.dump(clash, writer, sort_keys=False)
+
+"""                
+   https://github.com/yu-steven/openit/
+"""         
