@@ -51,10 +51,13 @@ jobs:
     - name: 执行任务2
       run:  |
         python main.py
+    - name: 执行任务3
+      if: ${{ success() }}
+      run:  |
         rm ./input.yaml
-        #cp ./ouput.yaml ./subconverter
-        #./subconverter/subconverter -g --artifact "base64"
-        #rm ./ouput.yaml
+        cp ./ouput.yaml ./subconverter
+        ./subconverter/subconverter -g --artifact "base64"
+        rm ./ouput.yaml
         rm -rf ./__pycache__
         rm -rf ./subconverter
     - name: 提交更改
