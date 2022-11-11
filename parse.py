@@ -11,7 +11,7 @@ def makeclash(dictin):
                     pass
                 else:
                     proxies.append(y)
-                    proxies_noname.append(y[1:])
+                    proxies_noname.append(y.pop('name'))
         except:
             continue
     print("len",len(proxies),"qichong",len(proxies_noname))
