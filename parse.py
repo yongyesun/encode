@@ -14,4 +14,5 @@ def makeclash(dictin):
                     proxies_noname.append(y[1:])
         except:
             continue
+    print(len(proxies))
     return proxies
