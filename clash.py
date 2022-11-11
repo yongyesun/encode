@@ -73,13 +73,13 @@ def push(list):
                 elif x['type'] == 'vmess':
                     try:
                         if 'udp' in x:
-                            if x['udp'] not in [False, True]:
+                            if x['udp'] not in ['false','true']:
                                 continue
                         if 'tls' in x:
-                            if x['tls'] not in [False, True]:
+                            if x['tls'] not in ['false','true']:
                                 continue
                         if 'skip-cert-verify' in x:
-                            if x['skip-cert-verify'] not in [False, True]:
+                            if x['skip-cert-verify'] not in ['false','true']:
                                 continue
                         if x['cipher'] not in vmess_supported_ciphers:
                             continue
@@ -90,10 +90,10 @@ def push(list):
                 elif x['type'] == 'trojan':
                     try:
                         if 'udp' in x:
-                            if x['udp'] not in [False, True]:
+                            if x['udp'] not in ['false','true']:
                                 continue
                         if 'skip-cert-verify' in x:
-                            if x['skip-cert-verify'] not in [False, True]:
+                            if x['skip-cert-verify'] not in ['false','true']:
                                 continue
                         x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'TJN'
                         authentication = 'password'
@@ -102,10 +102,10 @@ def push(list):
                 elif x['type'] == 'snell':
                     try:
                         if 'udp' in x:
-                            if x['udp'] not in [False, True]:
+                            if x['udp'] not in ['false','true']:
                                 continue
                         if 'skip-cert-verify' in x:
-                            if x['skip-cert-verify'] not in [False, True]:
+                            if x['skip-cert-verify'] not in ['false','true']:
                                 continue
                         x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SNL'
                         authentication = 'psk'
@@ -114,7 +114,7 @@ def push(list):
                 elif x['type'] == 'http':
                     try:
                         if 'tls' in x:
-                            if x['tls'] not in [False, True]:
+                            if x['tls'] not in ['false','true']:
                                 continue
                         x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'HTT'
                         # authentication = 'userpass'
@@ -123,13 +123,13 @@ def push(list):
                 elif x['type'] == 'socks5':
                     try:
                         if 'tls' in x:
-                            if x['tls'] not in [False, True]:
+                            if x['tls'] not in ['false','true']:
                                 continue
                         if 'udp' in x:
-                            if x['udp'] not in [False, True]:
+                            if x['udp'] not in ['false','true']:
                                 continue
                         if 'skip-cert-verify' in x:
-                            if x['skip-cert-verify'] not in [False, True]:
+                            if x['skip-cert-verify'] not in ['false','true']:
                                 continue
                         x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SK5'
                         # authentication = 'userpass'
