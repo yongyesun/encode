@@ -16,4 +16,4 @@ if __name__ == '__main__':
                 #proxies = makeclash(proxy_list)
                 #push(proxies)
   with open('print.txt', 'w') as writer:
-        printf(reader_list) >> writer
+        print(reader_list) >> writer
