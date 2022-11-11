@@ -12,7 +12,7 @@ def makeclash(dictin):
                     pass
                 else:
                     proxies.append(y)
-                    proxies_noname.append(z)
+                proxies_noname.append(z)
         except:
             continue
     print("makeclash",len(proxies))
