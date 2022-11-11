@@ -33,7 +33,6 @@ jobs:
          cp ./nodeencode ./subconverter
          cp -rf ./generate.ini ./subconverter
          ./subconverter/subconverter -g --artifact "node"
-         ls
          cp ./subconverter/input.yaml ./
          python main.py
     - name: 提交更改
@@ -43,5 +42,5 @@ jobs:
          git config --local user.name "GitHub Actions"
          git add .
          git commit -m "$(date '+%Y-%m-%d %H:%M:%S')更新"
-         git pull origin main
-         git push origin main
+         git pull origin rename
+         git push origin rename
