@@ -15,5 +15,5 @@ def makeclash(dictin):
                     proxies_noname.append(z)
         except:
             continue
-    print("len",len(proxies),"qichong",len(proxies_noname))
+    print("makeclash",len(proxies))
     return proxies
