@@ -20,10 +20,8 @@ if __name__ == '__main__':
                         proxy_list.append(reader_list[i])
                 """        
                 working = yaml.load(reader, Loader=BaseLoader)
-                print("working",working)
                 for x in working['proxies']:
                         proxy_list.append(x)
-                print("proxy_list",proxy_list)
                 #proxy_list=list(proxy_list)
-                #proxies = makeclash(proxy_list)
-                #push(proxies)
+                proxies = makeclash(proxy_list)
+                push(proxies)
