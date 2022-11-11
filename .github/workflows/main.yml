@@ -52,6 +52,7 @@ jobs:
       run:  |
         python main.py
         rm ./input.yaml
+        cp ./ouput.yaml ./subconverter
         ./subconverter/subconverter -g --artifact "base64"
         rm ./ouput.yaml
         rm -rf ./__pycache__
