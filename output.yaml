@@ -1,510 +1,509 @@
 proxies:
-- name: "\U0001F1E8\U0001F1F3 CN 1 SSS"
-  server: 14.29.124.168
+- server: 14.29.124.168
   port: 25247
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 2 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 1 SSS"
+- server: 14.29.124.174
   port: 11007
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 3 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 2 SSS"
+- server: 14.29.124.168
   port: 25238
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 4 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 3 SSS"
+- server: 14.29.124.168
   port: 25296
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 5 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 4 SSS"
+- server: 14.29.124.168
   port: 25256
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 6 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 5 SSS"
+- server: 14.29.124.168
   port: 25210
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 7 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 6 SSS"
+- server: 14.29.124.168
   port: 25220
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 8 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 7 SSS"
+- server: 14.29.124.168
   port: 25261
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 9 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 8 SSS"
+- server: 14.29.124.168
   port: 25259
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 10 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 9 SSS"
+- server: 14.29.124.168
   port: 25219
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 11 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 10 SSS"
+- server: 14.29.124.168
   port: 25283
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 12 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 11 SSS"
+- server: 14.29.124.168
   port: 25217
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 13 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 12 SSS"
+- server: 14.29.124.168
   port: 25289
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 14 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 13 SSS"
+- server: 14.29.124.168
   port: 25222
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 15 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 14 SSS"
+- server: 14.29.124.168
   port: 25268
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 16 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 15 SSS"
+- server: 14.29.124.168
   port: 25284
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 17 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 16 SSS"
+- server: 14.29.124.168
   port: 25226
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 18 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 17 SSS"
+- server: 14.29.124.168
   port: 25295
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 19 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 18 SSS"
+- server: 14.29.124.168
   port: 25271
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 20 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 19 SSS"
+- server: 14.29.124.168
   port: 25231
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 21 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 20 SSS"
+- server: 14.29.124.168
   port: 25235
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 22 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 21 SSS"
+- server: 14.29.124.168
   port: 25294
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 23 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 22 SSS"
+- server: 14.29.124.174
   port: 11044
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 24 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 23 SSS"
+- server: 14.29.124.174
   port: 11049
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 25 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 24 SSS"
+- server: 14.29.124.174
   port: 11011
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 26 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 25 SSS"
+- server: 14.29.124.174
   port: 11035
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 27 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 26 SSS"
+- server: 14.29.124.174
   port: 11048
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 28 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 27 SSS"
+- server: 14.29.124.174
   port: 11034
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 29 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 28 SSS"
+- server: 14.29.124.168
   port: 24005
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 30 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 29 SSS"
+- server: 14.29.124.174
   port: 11020
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 31 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 30 SSS"
+- server: 14.29.124.174
   port: 11038
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 32 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 31 SSS"
+- server: 14.29.124.168
   port: 25272
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 33 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 32 SSS"
+- server: 14.29.124.174
   port: 11015
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 34 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 33 SSS"
+- server: 14.29.124.168
   port: 25279
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 35 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 34 SSS"
+- server: 14.29.124.168
   port: 25280
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 36 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 35 SSS"
+- server: 14.29.124.168
   port: 25245
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 37 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 36 SSS"
+- server: 14.29.124.168
   port: 25297
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 38 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 37 SSS"
+- server: 14.29.124.174
   port: 11032
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 39 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 38 SSS"
+- server: 14.29.124.168
   port: 25218
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 40 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 39 SSS"
+- server: 14.29.124.174
   port: 11043
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 41 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 40 SSS"
+- server: 14.29.124.174
   port: 11008
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 42 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 41 SSS"
+- server: 14.29.124.168
   port: 25207
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 43 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 42 SSS"
+- server: 14.29.124.174
   port: 11050
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 44 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 43 SSS"
+- server: 14.29.124.168
   port: 25270
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 45 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 44 SSS"
+- server: 14.29.124.168
   port: 25267
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 46 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 45 SSS"
+- server: 14.29.124.174
   port: 11036
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 47 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 46 SSS"
+- server: 14.29.124.174
   port: 11039
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 48 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 47 SSS"
+- server: 14.29.124.174
   port: 11015
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 49 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 48 SSS"
+- server: 14.29.124.174
   port: 11019
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 50 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 49 SSS"
+- server: 14.29.124.174
   port: 11003
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 51 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 50 SSS"
+- server: 14.29.124.174
   port: 11031
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 52 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 51 SSS"
+- server: 14.29.124.174
   port: 11005
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 53 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 52 SSS"
+- server: 14.29.124.174
   port: 11041
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 54 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 53 SSS"
+- server: 14.29.124.168
   port: 24000
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 55 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 54 SSS"
+- server: 14.29.124.174
   port: 11009
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 56 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 55 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 45190
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 57 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 56 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 45392
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 58 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 57 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 45144
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 59 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 58 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 45183
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 60 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 59 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 25003
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 61 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 60 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 25011
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 62 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 61 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 25010
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 63 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 62 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 25019
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 64 SSS"
-  server: node.a.access.in.nyapi.buzz
+  name: "\U0001F1E8\U0001F1F3 CN 63 SSS"
+- server: node.a.access.in.nyapi.buzz
   port: 25017
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 1f6d4a50-44c0-4e92-af64-06752c5deeef
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 65 SSS"
-  server: 14.29.124.174
+  name: "\U0001F1E8\U0001F1F3 CN 64 SSS"
+- server: 14.29.124.174
   port: 11004
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 66 SSS"
-  server: apollo.cn.v4.hdsky.org
+  name: "\U0001F1E8\U0001F1F3 CN 65 SSS"
+- server: apollo.cn.v4.hdsky.org
   port: 39343
   type: ss
   cipher: chacha20-ietf-poly1305
   password: 0d7908c1-f865-4e73-bba0-f4a23f690f48
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 67 SSS"
-  server: 180.101.193.226
+  name: "\U0001F1E8\U0001F1F3 CN 66 SSS"
+- server: 180.101.193.226
   port: 10068
   type: ss
   cipher: aes-256-cfb
   password: RsDk3peCSuo76B68
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 68 SSS"
-  server: 14.29.124.168
+  name: "\U0001F1E8\U0001F1F3 CN 67 SSS"
+- server: 14.29.124.168
   port: 24009
   type: ss
   cipher: aes-128-cfb
   password: QazEdcTgb159@$*
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 69 SSS"
-  server: 180.101.193.226
+  name: "\U0001F1E8\U0001F1F3 CN 68 SSS"
+- server: 180.101.193.226
   port: 10068
   type: ss
   cipher: aes-256-cfb
   password: RsDk3peCSuo76B68
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 70 SSS"
-  server: gz-hk.iepl.0000.foxinode.com
+  name: "\U0001F1E8\U0001F1F3 CN 69 SSS"
+- server: gz-hk.iepl.0000.foxinode.com
   port: 10121
   type: ss
   cipher: chacha20-ietf-poly1305
   password: e31cc8d4-5b95-4064-822e-b0524442a1fe
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 71 SSS"
-  server: yg.jsyun.tk
+  name: "\U0001F1E8\U0001F1F3 CN 70 SSS"
+- server: yg.jsyun.tk
   port: 15437
   type: ss
   cipher: aes-256-cfb
   password: Aa66778899..
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 72 SSS"
-  server: pvcc01.clashcloud.tech
+  name: "\U0001F1E8\U0001F1F3 CN 71 SSS"
+- server: pvcc01.clashcloud.tech
   port: 1938
   type: ss
   cipher: rc4-md5
   password: ENBreu
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 73 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 72 SSS"
+- server: 124.225.24.176
   port: 7714
   type: ss
   cipher: rc4-md5
@@ -514,8 +513,8 @@ proxies:
     mode: http
     host: 5313156850.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 74 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 73 SSS"
+- server: 124.225.24.176
   port: 7716
   type: ss
   cipher: rc4-md5
@@ -525,8 +524,8 @@ proxies:
     mode: http
     host: 5313156850.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 75 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 74 SSS"
+- server: 124.225.24.176
   port: 7710
   type: ss
   cipher: rc4-md5
@@ -536,8 +535,8 @@ proxies:
     mode: http
     host: 5313156850.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 76 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 75 SSS"
+- server: 124.225.24.176
   port: 7719
   type: ss
   cipher: rc4-md5
@@ -547,8 +546,8 @@ proxies:
     mode: http
     host: 5313156850.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 77 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 76 SSS"
+- server: 124.225.24.176
   port: 7715
   type: ss
   cipher: rc4-md5
@@ -558,8 +557,8 @@ proxies:
     mode: http
     host: 5313156850.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 78 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 77 SSS"
+- server: 124.225.24.176
   port: 7718
   type: ss
   cipher: rc4-md5
@@ -569,8 +568,8 @@ proxies:
     mode: http
     host: 5313156850.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 79 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 78 SSS"
+- server: 124.225.24.176
   port: 7712
   type: ss
   cipher: rc4-md5
@@ -580,8 +579,8 @@ proxies:
     mode: http
     host: 5313156850.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 80 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 79 SSS"
+- server: 124.225.24.176
   port: 7717
   type: ss
   cipher: rc4-md5
@@ -591,8 +590,8 @@ proxies:
     mode: http
     host: 5313156850.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 81 SSS"
-  server: 124.225.24.176
+  name: "\U0001F1E8\U0001F1F3 CN 80 SSS"
+- server: 124.225.24.176
   port: 7710
   type: ss
   cipher: rc4-md5
@@ -602,15 +601,15 @@ proxies:
     mode: http
     host: 9ab9a83977.microsoft.com
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 82 SSS"
-  server: tw-game.suke.wiki
+  name: "\U0001F1E8\U0001F1F3 CN 81 SSS"
+- server: tw-game.suke.wiki
   port: 4490
   type: ss
   cipher: chacha20-ietf-poly1305
   password: f03f2d14-9ea7-4676-b7da-8f737f4aa6da
   udp: 'true'
-- name: "\U0001F1E8\U0001F1F3 CN 83 SSS"
-  server: cn-shtele.lfk5s2.ccddn4.icu
+  name: "\U0001F1E8\U0001F1F3 CN 82 SSS"
+- server: cn-shtele.lfk5s2.ccddn4.icu
   port: 65003
   type: ss
   cipher: chacha20-ietf-poly1305
@@ -620,6 +619,7 @@ proxies:
     mode: http
     host: d11ce3900.dm.files.1drv.com
   udp: 'true'
+  name: "\U0001F1E8\U0001F1F3 CN 83 SSS"
 proxy-groups:
 - name: automatic
   type: url-test
