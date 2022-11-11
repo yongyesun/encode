@@ -17,3 +17,7 @@ def makeclash(dictin):
             continue
     print("makeclash",len(proxies))
     return proxies
+
+"""                
+   https://github.com/yu-steven/openit/
+""" 
