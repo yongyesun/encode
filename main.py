@@ -1,6 +1,6 @@
 import time
 import yaml
-#from yaml.loader import BaseLoader Loader
+from yaml.loader import BaseLoader Loader
 from parse import makeclash
 from clash import push
         
