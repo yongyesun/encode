@@ -8,8 +8,8 @@ on:
     # 每6小时获取一次
     #- cron: '0 */12 * * *'
 
-env:
-  UPLOAD_CONFIG: true
+#env:
+  #UPLOAD_CONFIG: true
 
 jobs:
   deploy:
@@ -30,26 +30,30 @@ jobs:
          rm ./nodeencode
          wget ${{ secrets.Check_File }} -O ./nodelist -q
          base64 ./nodelist > nodeencode -w 0
-         #rm ./nodelist
+         rm ./nodelist
          wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz
          tar -zxvf subconverter_linux32.tar.gz
          rm ./subconverter_linux32.tar.gz
          cp ./nodeencode ./subconverter
+         rm ./nodeencode
          cp -rf ./generate.ini ./subconverter
          cp ./test_profile.ini ./subconverter
          cp ./example_external_config.ini ./subconverter
          ./subconverter/subconverter -g --artifact "node"
          cp ./subconverter/input.yaml ./
-         echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-    - name: 上传文件在 github actions
-      uses: actions/upload-artifact@v2
-      if: env.UPLOAD_CONFIG == 'true'
-      with:
-        name: .input_${{ env.Compile_Date }}
-        path: input.yaml
+         #echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+    #- name: 上传文件在 github actions
+      #uses: actions/upload-artifact@v2
+      #if: env.UPLOAD_CONFIG == 'true'
+      #with:
+        #name: .input_${{ env.Compile_Date }}
+        #path: input.yaml
     - name: 执行任务2
       run:  |
         python main.py
+        rm ./input.yaml
+        ./subconverter/subconverter -g --artifact "base64"
+        rm ./ouput.yaml
         rm -rf ./__pycache__
         rm -rf ./subconverter
     - name: 提交更改
