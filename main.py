@@ -11,7 +11,7 @@ if __name__ == '__main__':
   with open(nodes, 'r') as reader:
                 reader_list = reader.readlines()
                 working = []
-                for i in range(reader_list.index('proxies:'),reader_list.index('proxy-groups:')+1):
+                for i in range(reader_list.index('proxies:\n'),reader_list.index('proxy-groups:\n')+1):
                         working.append(reader_list(i))
                 print(working)
                 #for x in working['proxies']:
