@@ -9,8 +9,8 @@ proxy_list=[]
 if __name__ == '__main__':
   nodes = 'input.yaml'
   with open(nodes, 'r') as reader:
-                reader_list = reader.readlines()
                 """
+                reader_list = reader.readlines()                
                 for i in range(reader_list.index('proxies:\n')+1,reader_list.index('proxy-groups:\n')):
                         reader_list[i] = reader_list[i].strip()
                         reader_list[i] = reader_list[i].strip("-")
@@ -20,7 +20,7 @@ if __name__ == '__main__':
                         proxy_list.append(reader_list[i])
                 """        
                 working = yaml.load(reader, Loader=BaseLoader)
-                print(working)
+                print("working",working)
                 for x in working['proxies']:
                         proxy_list.append(x)
                 print(proxy_list)
