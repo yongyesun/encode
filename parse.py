@@ -4,14 +4,15 @@ def makeclash(dictin):
     proxies_noname = []
     for y in dictin:
         try:
-            if y in proxies_noname:
+            z = y.pop('name')
+            if z in proxies_noname:
                 pass
             else:
                 if y['type'] in badprotocols:
                     pass
                 else:
                     proxies.append(y)
-                    proxies_noname.append(y.pop('name'))
+                    proxies_noname.append(z)
         except:
             continue
     print("len",len(proxies),"qichong",len(proxies_noname))
