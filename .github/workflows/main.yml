@@ -8,6 +8,9 @@ on:
     # 每6小时获取一次
     #- cron: '0 */12 * * *'
 
+env:
+  UPLOAD_CONFIG: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,7 +25,7 @@ jobs:
     - name: 安装pip包
       run: | 
          pip install -r ./requirements.txt
-    - name: 执行任务
+    - name: 执行任务1
       run: |
          rm ./nodeencode
          wget ${{ secrets.Check_File }} -O ./nodelist -q
@@ -35,8 +38,15 @@ jobs:
          cp ./test_profile.ini ./subconverter
          cp ./example_external_config.ini ./subconverter
          ./subconverter/subconverter -g --artifact "node"
-         cp ./subconverter/input.yaml ./
-         python main.py
+         cp ./subconverter/input.yaml ./      
+    - name: 上传文件在 github actions
+      uses: actions/upload-artifact@v2
+      if: env.UPLOAD_CONFIG == 'true'
+      with:
+        name: .input_${{ env.Compile_Date }}
+        path: input.yaml
+    - name: 执行任务2
+      run:  python main.py
     - name: 提交更改
       run: |
          git config core.ignorecase false
