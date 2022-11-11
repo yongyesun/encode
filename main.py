@@ -22,6 +22,7 @@ if __name__ == '__main__':
                 working = yaml.load(reader, Loader=BaseLoader)
                 for x in working['proxies']:
                         proxy_list.append(x)
+                print("before",len(proxy_list))
                 #proxy_list=list(proxy_list)
                 proxies = makeclash(proxy_list)
                 push(proxies)
