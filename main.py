@@ -13,6 +13,8 @@ if __name__ == '__main__':
                 working = []
                 for i in range(reader_list.index('proxies:\n')+1,reader_list.index('proxy-groups:\n')):
                         reader_list[i] = reader_list[i].strip()
+                        reader_list[i] = reader_list[i].strip("-")
+                        reader_list[i] = reader_list[i].strip()
                         reader_list[i] = reader_list[i].strip("{}")
                         reader_list[i] = reader_list[i].split(",")
                         working.append(reader_list[i])
