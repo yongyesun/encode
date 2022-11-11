@@ -40,7 +40,6 @@ jobs:
          cp ./test_profile.ini ./subconverter
          cp ./example_external_config.ini ./subconverter
          ./subconverter/subconverter -g --artifact "node"
-         cp ./subconverter/input.yaml ./
          #echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
     #- name: 上传文件在 github actions
       #uses: actions/upload-artifact@v2
@@ -49,14 +48,18 @@ jobs:
         #name: .input_${{ env.Compile_Date }}
         #path: input.yaml
     - name: 执行任务2
+      if: ${{ success() }}    
       run:  |
+        cp ./subconverter/input.yaml ./      
         python main.py
     - name: 执行任务3
       if: ${{ success() }}
       run:  |
         rm ./input.yaml
+        ls 
         cp ./ouput.yaml ./subconverter
         ./subconverter/subconverter -g --artifact "base64"
+        cp ./subconverter/output ./
         rm ./ouput.yaml
         rm -rf ./__pycache__
         rm -rf ./subconverter
