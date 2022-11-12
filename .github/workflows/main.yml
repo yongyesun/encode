@@ -27,7 +27,7 @@ jobs:
          pip install -r ./requirements.txt
     - name: 执行任务
       run: |
-         rm ./output.yaml
+         rm ./output
          wget ${{ secrets.Check_File }} -O ./nodelist -q
          base64 ./nodelist > nodeencode -w 0
          rm ./nodelist
@@ -52,10 +52,10 @@ jobs:
         cp ./subconverter/input.yaml ./      
         python main.py
         rm ./input.yaml
-        #cp ./output.yaml ./subconverter
-        #./subconverter/subconverter -g --artifact "base64"
-        #cp ./subconverter/output ./
-        #rm ./output.yaml
+        cp ./output.yaml ./subconverter
+        ./subconverter/subconverter -g --artifact "base64"
+        cp ./subconverter/output ./
+        rm ./output.yaml
         rm -rf ./__pycache__
         rm -rf ./subconverter
     - name: 提交更改
