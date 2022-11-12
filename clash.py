@@ -154,7 +154,10 @@ def push(list):
                     except:
                         iplist[ip] = []
                         iplist[ip].append(x['port'])
-  
+                        
+                if '<' in x[authentication]:
+                    continue
+                    
                 clash['proxies'].append(x)
                 clash['proxy-groups'][0]['proxies'].append(x['name'])
                 clash['proxy-groups'][1]['proxies'].append(x['name'])
