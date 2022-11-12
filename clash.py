@@ -83,6 +83,8 @@ def push(list):
                                 continue
                         if x['cipher'] not in vmess_supported_ciphers:
                             continue
+                        if int(len(x['uuid'])) < 36:
+                            continue
                         x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'VMS'
                         authentication = 'uuid'
                     except:
@@ -153,11 +155,7 @@ def push(list):
                         iplist[ip].append(x['port'])
                     except:
                         iplist[ip] = []
-                        iplist[ip].append(x['port'])
-                        
-                if r'<' in x[authentication]:
-                    print(authentication,x[authentication])
-                    continue
+                        iplist[ip].append(x['port'])                     
                     
                 clash['proxies'].append(x)
                 clash['proxy-groups'][0]['proxies'].append(x['name'])
