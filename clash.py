@@ -155,7 +155,7 @@ def push(list):
                         iplist[ip] = []
                         iplist[ip].append(x['port'])
                         
-                if '<' in x[authentication]:
+                if r'<' in x[authentication]:
                     print(authentication,x[authentication])
                     continue
                     
