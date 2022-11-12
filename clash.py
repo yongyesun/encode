@@ -156,6 +156,7 @@ def push(list):
                         iplist[ip].append(x['port'])
                         
                 if '<' in x[authentication]:
+                    print(authentication,x[authentication])
                     continue
                     
                 clash['proxies'].append(x)
