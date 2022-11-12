@@ -47,20 +47,15 @@ jobs:
       #with:
         #name: .input_${{ env.Compile_Date }}
         #path: input.yaml
-    - name: 执行任务2
-      if: ${{ success() }}    
+    - name: 执行任务2    
       run:  |
         cp ./subconverter/input.yaml ./      
         python main.py
-    - name: 执行任务3
-      if: ${{ success() }}
-      run:  |
         rm ./input.yaml
-        ls 
-        cp ./ouput.yaml ./subconverter
+        cp ./output.yaml ./subconverter
         ./subconverter/subconverter -g --artifact "base64"
         cp ./subconverter/output ./
-        rm ./ouput.yaml
+        rm ./output.yaml
         rm -rf ./__pycache__
         rm -rf ./subconverter
     - name: 提交更改
