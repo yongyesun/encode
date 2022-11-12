@@ -14,7 +14,8 @@ def makeclash(dictin):
                     proxies.append(y)
                 proxies_noname.append(z)
                 if 'password' in y:
-                    print("type",type(y['password']))
+                    if r'<' in y['password']:
+                        print("pass",y['password'])                                     
         except:
             continue
     print("makeclash",len(proxies))
