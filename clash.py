@@ -39,6 +39,9 @@ def push(list):
                         if x['cipher'] not in ss_supported_ciphers:
                             ss_omit_cipher_unsupported = ss_omit_cipher_unsupported + 1
                             continue
+                        if 'plugin-opts' in x:
+                            if x['plugin-opts']['mode'] == '':
+                                continue
                         if country != 'CN':
                             if ip in iplist:
                                 ss_omit_ip_dupe = ss_omit_ip_dupe + 1
