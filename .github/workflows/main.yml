@@ -4,9 +4,9 @@ name: encode
 on:
   workflow_dispatch:
   # 定时触发
-  #schedule:
+  schedule:
     # 每2小时获取一次
-    #- cron: '0 */2 * * *'
+    - cron: '0 */2 * * *'
 
 env:
   UPLOAD_CONFIG: true
@@ -34,31 +34,31 @@ jobs:
          #rm ./nodelist
          wget ${{ secrets.Check_File2 }} -O ./nodeencode2 -q
          wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz
-         tar -zxvf subconverter_linux32.tar.gz
-         rm ./subconverter_linux32.tar.gz
-         cp ./nodeencode ./subconverter
-         cp ./nodeencode2 ./subconverter
-         rm ./nodeencode
-         rm ./nodeencode2
-         cp -rf ./generate.ini ./subconverter
-         cp ./test_profile.ini ./subconverter
-         cp ./example_external_config.ini ./subconverter
-         ./subconverter/subconverter -g --artifact "node"
-         cp ./subconverter/input.yaml ./
-         echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-    - name: 上传文件在 github actions
-      uses: actions/upload-artifact@v2
-      if: env.UPLOAD_CONFIG == 'true'
-      with:
-        name: .input_${{ env.Compile_Date }}
-        path: input.yaml
+         tar -zxvf subconverter_linux32.tar.gz && rm ./subconverter_linux32.tar.gz
+         #rm ./subconverter_linux32.tar.gz
+         cp ./nodeencode ./subconverter && rm ./nodeencode
+         cp ./nodeencode2 ./subconverter && rm ./nodeencode
+         #rm ./nodeencode
+         #rm ./nodeencode2
+         cp -rf ./generate.ini ./subconverter && cp ./test_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && cp ./subconverter/input.yaml ./
+         #cp ./test_profile.ini ./subconverter
+         #cp ./example_external_config.ini ./subconverter
+         #./subconverter/subconverter -g --artifact "node"
+         #cp ./subconverter/input.yaml ./
+         #echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+    #- name: 上传文件在 github actions
+      #uses: actions/upload-artifact@v2
+      #if: env.UPLOAD_CONFIG == 'true'
+      #with:
+        #name: .input_${{ env.Compile_Date }}
+        #path: input.yaml
     - name: 执行任务2    
       run:  |      
         python main.py
         rm ./input.yaml
-        cp ./output.yaml ./subconverter
-        ./subconverter/subconverter -g --artifact "base64"
-        cp ./subconverter/output ./
+        cp ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./
+        #./subconverter/subconverter -g --artifact "base64"
+        #cp ./subconverter/output ./
         rm ./output.yaml
         rm -rf ./__pycache__
         rm -rf ./subconverter
