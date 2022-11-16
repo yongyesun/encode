@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3     #git clone
+      with: { ref: rename }
     - uses: actions/setup-python@v4 #python环境
       with:
         python-version: '3.x'       #python 3.x
