@@ -8,8 +8,8 @@ on:
     # 每2小时获取一次
     - cron: '0 */2 * * *'
 
-env:
-  UPLOAD_CONFIG: true
+#env:
+  #UPLOAD_CONFIG: true
 
 jobs:
   deploy:
