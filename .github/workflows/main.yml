@@ -4,24 +4,64 @@ name: encode
 on:
   workflow_dispatch:
   # 定时触发
-  #schedule:
-    # 每6小时获取一次
-    #- cron: '0 */12 * * *'
+  schedule:
+    # 每2小时获取一次
+    - cron: '0 */2 * * *'
+
+#env:
+  #UPLOAD_CONFIG: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: 迁出代码
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v3     #git clone
+      with: { ref: rename }
+    - uses: actions/setup-python@v4 #python环境
+      with:
+        python-version: '3.x'       #python 3.x
+        cache: 'pip'                #pip cache
     - name: 设置时区
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
+    - name: 安装pip包
+      run: | 
+         pip install -r ./requirements.txt
     - name: 执行任务
       run: |
-         rm ./nodeencode
-         wget ${{ secrets.Check_File }} -O ./nodelist -q
-         base64 ./nodelist > nodeencode -w 0
-         rm ./nodelist
+         rm ./output
+         wget ${{ secrets.Check_File }} -O ./nodeencode -q
+         #base64 ./nodelist > nodeencode -w 0
+         #rm ./nodelist
+         wget ${{ secrets.Check_File2 }} -O ./nodeencode2 -q
+         wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz
+         tar -zxvf subconverter_linux32.tar.gz && rm ./subconverter_linux32.tar.gz
+         #rm ./subconverter_linux32.tar.gz
+         cp ./nodeencode ./subconverter && rm ./nodeencode
+         cp ./nodeencode2 ./subconverter && rm ./nodeencode
+         #rm ./nodeencode
+         #rm ./nodeencode2
+         cp -rf ./generate.ini ./subconverter && cp ./test_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && cp ./subconverter/input.yaml ./
+         #cp ./test_profile.ini ./subconverter
+         #cp ./example_external_config.ini ./subconverter
+         #./subconverter/subconverter -g --artifact "node"
+         #cp ./subconverter/input.yaml ./
+         #echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+    #- name: 上传文件在 github actions
+      #uses: actions/upload-artifact@v2
+      #if: env.UPLOAD_CONFIG == 'true'
+      #with:
+        #name: .input_${{ env.Compile_Date }}
+        #path: input.yaml
+    - name: 执行任务2    
+      run:  |      
+        python main.py
+        rm ./input.yaml
+        cp ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./
+        #./subconverter/subconverter -g --artifact "base64"
+        #cp ./subconverter/output ./
+        rm ./output.yaml
+        rm -rf ./__pycache__
+        rm -rf ./subconverter
     - name: 提交更改
       run: |
          git config core.ignorecase false
@@ -29,5 +69,5 @@ jobs:
          git config --local user.name "GitHub Actions"
          git add .
          git commit -m "$(date '+%Y-%m-%d %H:%M:%S')更新"
-         git pull origin main
-         git push origin main
+         git pull origin rename
+         git push origin rename
