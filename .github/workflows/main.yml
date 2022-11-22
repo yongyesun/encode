@@ -8,8 +8,8 @@ on:
     # 每2小时获取一次
     - cron: '0 */2 * * *'
 
-#env:
-  #UPLOAD_CONFIG: true
+env:
+  UPLOAD_CONFIG: true
 
 jobs:
   deploy:
@@ -45,13 +45,13 @@ jobs:
          #cp ./example_external_config.ini ./subconverter
          #./subconverter/subconverter -g --artifact "node"
          #cp ./subconverter/input.yaml ./
-         #echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-    #- name: 上传文件在 github actions
-      #uses: actions/upload-artifact@v2
-      #if: env.UPLOAD_CONFIG == 'true'
-      #with:
-        #name: .input_${{ env.Compile_Date }}
-        #path: input.yaml
+         echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+    - name: 上传文件在 github actions
+      uses: actions/upload-artifact@v2
+      if: env.UPLOAD_CONFIG == 'true'
+      with:
+        name: .input_${{ env.Compile_Date }}
+        path: input.yaml
     - name: 执行任务2    
       run:  |      
         python main.py
