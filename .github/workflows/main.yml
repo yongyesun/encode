@@ -6,7 +6,7 @@ on:
   # 定时触发
   schedule:
     # 每2小时获取一次
-    - cron: '0 */12 * * *'
+    - cron: '0 */2 * * *'
 
 env:
   UPLOAD_CONFIG: true
@@ -34,13 +34,15 @@ jobs:
          #rm ./nodelist
          wget ${{ secrets.Check_File2 }} -O ./nodeencode2 -q
          wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz
-         tar -zxvf subconverter_linux32.tar.gz && rm ./subconverter_linux32.tar.gz
+         tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
          #rm ./subconverter_linux32.tar.gz
+         rm ./Country.mmdb
+         wget -q https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
          cp ./nodeencode ./subconverter && rm ./nodeencode
          cp ./nodeencode2 ./subconverter && rm ./nodeencode2
          #rm ./nodeencode
          #rm ./nodeencode2
-         cp -rf ./generate.ini ./subconverter && cp ./test_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml
+         cp -rf ./generate.ini ./subconverter && cp ./test_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" >/dev/null && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml
          #cp ./test_profile.ini ./subconverter
          #cp ./example_external_config.ini ./subconverter
          #./subconverter/subconverter -g --artifact "node"
@@ -56,7 +58,7 @@ jobs:
       run:  |      
         python main.py
         rm ./input.yaml
-        cp ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./
+        cp ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "base64" >/dev/null && cp ./subconverter/output ./
         #./subconverter/subconverter -g --artifact "base64"
         #cp ./subconverter/output ./
         rm ./output.yaml
