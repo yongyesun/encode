@@ -28,7 +28,7 @@ jobs:
          pip install -r ./requirements.txt
     - name: 执行任务
       run: |
-         rm ./output
+         rm ./output || ls
          wget ${{ secrets.Check_File }} -O ./nodeencode -q
          #base64 ./nodelist > nodeencode -w 0
          #rm ./nodelist
