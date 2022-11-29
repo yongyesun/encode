@@ -171,8 +171,11 @@ def push(list):
                 """    
 
                 if ip not in iplist:
-                    iplist.append(ip)
-                    iplist[ip].append(x) 
+                    try:
+                        iplist[ip].append(x)
+                    except:
+                        iplist[ip] = []
+                        iplist[ip].append(x)  
                 else:
                     iplist[ip].append(x)
                     
