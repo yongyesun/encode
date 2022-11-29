@@ -184,8 +184,8 @@ def push(list):
             except:
                 continue
 
-    for i in iplist:
-        for x in i:
+    for ip in iplist:
+        for x in iplist[ip]:
             clash['proxies'].append(x)
             clash['proxy-groups'][0]['proxies'].append(x['name'])
             clash['proxy-groups'][1]['proxies'].append(x['name'])
