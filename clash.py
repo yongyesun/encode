@@ -169,15 +169,12 @@ def push(list):
                         iplist[ip] = []
                         iplist[ip].append(x['port'])                     
                 """    
-
-                if ip not in iplist:
-                    try:
-                        iplist[ip].append(x)
-                    except:
-                        iplist[ip] = []
-                        iplist[ip].append(x)  
-                else:
+              
+                try:
                     iplist[ip].append(x)
+                except:
+                    iplist[ip] = []
+                    iplist[ip].append(x)  
                     
                 count = count + 1
 
