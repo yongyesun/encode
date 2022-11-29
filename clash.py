@@ -42,6 +42,7 @@ def push(list):
                         if 'plugin-opts' in x:
                             if x['plugin-opts']['mode'] == '':
                                 continue
+                        """
                         if country != 'CN':
                             if ip in iplist:
                                 ss_omit_ip_dupe = ss_omit_ip_dupe + 1
@@ -50,6 +51,7 @@ def push(list):
                             else:
                                 iplist[ip] = []
                                 iplist[ip].append(x['port'])
+                        """
                         x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSS'
                         authentication = 'password'
                     except:
@@ -61,7 +63,8 @@ def push(list):
                         if x['obfs'] not in ssr_supported_obfs:
                             continue
                         if x['protocol'] not in ssr_supported_protocol:
-                            continue
+                            continue                           
+                        """
                         if country != 'CN':
                             if ip in iplist:
                                 #continue
@@ -69,6 +72,7 @@ def push(list):
                             else:
                                 iplist.append(ip)
                                 iplist[ip].append(x['port'])
+                        """
                         authentication = 'password'
                         x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSR'
                     except:
@@ -147,6 +151,7 @@ def push(list):
                 else:
                     continue
                        
+                """
                 if ip in iplist and x['port'] in iplist[ip]:
                     if country != 'CN':
                         pass
@@ -163,15 +168,25 @@ def push(list):
                     except:
                         iplist[ip] = []
                         iplist[ip].append(x['port'])                     
+                """    
+
+                if ip not in iplist:
+                    iplist.append(ip)
+                    iplist[ip].append(x) 
+                else:
+                    iplist[ip].append(x)
                     
-                clash['proxies'].append(x)
-                clash['proxy-groups'][0]['proxies'].append(x['name'])
-                clash['proxy-groups'][1]['proxies'].append(x['name'])
                 count = count + 1
 
             except:
                 continue
 
+    for i in iplist:
+        for x in i:
+            clash['proxies'].append(x)
+            clash['proxy-groups'][0]['proxies'].append(x['name'])
+            clash['proxy-groups'][1]['proxies'].append(x['name'])
+                
     with open('output.yaml', 'w') as writer:
         yaml.dump(clash, writer, sort_keys=False)
 
