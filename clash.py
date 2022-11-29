@@ -75,6 +75,10 @@ def push(list):
                         continue
                 elif x['type'] == 'vmess':
                     try:
+                        if 'network' in x:
+                            if x['network'] == 'h2':
+                                if x['tls'] != 'true':
+                                    continue
                         if 'udp' in x:
                             if x['udp'] not in ['false','true']:
                                 continue
