@@ -58,7 +58,7 @@ jobs:
       run:  |      
         python main.py
         rm ./input.yaml
-        cp ./output.yaml ./clashcheck/data/input.yaml && cd ./clashcheck/ && python main.py; rm data/input.yaml; cd ..
+        cp ./output.yaml ./clashcheck/data/input.yaml && cp ./Country.mmdb ./clashcheck && cd ./clashcheck && python main.py; rm data/input.yaml; cd ..
         cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./
         #./subconverter/subconverter -g --artifact "base64"
         #cp ./subconverter/output ./
