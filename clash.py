@@ -182,10 +182,11 @@ def push(list):
                 continue
 
     for ip in iplist:
-        for x in iplist[ip]:
-            clash['proxies'].append(x)
-            clash['proxy-groups'][0]['proxies'].append(x['name'])
-            clash['proxy-groups'][1]['proxies'].append(x['name'])
+        if len(iplist[ip]) < 10:
+            for x in iplist[ip]:
+                clash['proxies'].append(x)
+                clash['proxy-groups'][0]['proxies'].append(x['name'])
+                clash['proxy-groups'][1]['proxies'].append(x['name'])
                 
     with open('output.yaml', 'w') as writer:
         yaml.dump(clash, writer, sort_keys=False)
