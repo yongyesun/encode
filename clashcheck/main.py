@@ -13,6 +13,7 @@ if __name__ == '__main__':
         clashname, operating_system = checkenv()
         checkuse(clashname[2::], operating_system)
         clash = subprocess.Popen([clashname, '-f', './temp/working.yaml', '-d', '.'])
+        cmd("netstat -lnp")
         processes =[]
         sema = Semaphore(threads)
         time.sleep(5)
