@@ -50,7 +50,7 @@ jobs:
         path: ./clashcheck/data/input.yaml
     - name: 执行任务2    
       run:  |             
-        cp ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
+        cp -rf ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
         rm ./data/input.yaml; rm -rf ./__pycache__
         cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && rm ./clashcheck/data/check.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./　&& rm ./subconverter/output                
         rm -rf ./subconverter
