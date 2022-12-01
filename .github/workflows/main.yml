@@ -37,7 +37,7 @@ jobs:
          tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
          #rm ./subconverter_linux32.tar.gz
          rm ./Country.mmdb
-         wget https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -O ./Country.mmdb -q
+         wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
          cp ./nodeencode ./subconverter && rm ./nodeencode
          cp ./nodeencode2 ./subconverter && rm ./nodeencode2
          #rm ./nodeencode
