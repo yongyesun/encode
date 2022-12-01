@@ -8,5 +8,4 @@ def check(alive, proxy, apiurl, sema, timeout, testurl):
         if 'delay' in response and response['delay'] > 0:
             alive.append(proxy)
     except: pass
-    sema.release()
-    print("alive",len(alive))
+    sema.release() 
