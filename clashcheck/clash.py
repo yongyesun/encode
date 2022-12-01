@@ -40,6 +40,8 @@ def push(list, outfile):
                     else:
                         flagcountry = country
                     """
+                    flagcountry = country
+                    
                     try:
                         country_count[country] = country_count[country] + 1
                         #x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(count)
