@@ -27,7 +27,7 @@ def init():
         proxyconfig = yaml.load(requests.get(source).text, Loader=SafeLoader)
     else:
         with open(source, 'r') as reader:
-            proxyconfig = yaml.load(reader, Loader=BaseLoader)
+            proxyconfig = yaml.load(reader, Loader=SafeLoader)
 
     # set clash api url
     baseurl = '127.0.0.1:' + str(api_port)
