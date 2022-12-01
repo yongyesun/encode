@@ -12,7 +12,7 @@ if __name__ == '__main__':
         http_port, api_port, threads, source, timeout, outfile, proxyconfig, apiurl, testurl, config= init()
         clashname, operating_system = checkenv()
         checkuse(clashname[2::], operating_system)
-        clash = subprocess.Popen([clashname, '-f', './temp/working.yaml', '-d', '.'])
+        clash = subprocess.Popen([clashname, '-f', './temp/working.yaml'])#, '-d', '.'])
         processes =[]
         sema = Semaphore(threads)
         time.sleep(5)
