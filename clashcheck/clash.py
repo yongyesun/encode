@@ -42,14 +42,30 @@ def push(list, outfile):
                     """
                     flagcountry = country
                     
-                    try:
+                    if x['type'] == 'ss':
+                        abbr_type = 'SSS'
+                    elif x['type'] == 'ssr':
+                        abbr_type = 'SSR'
+                    elif x['type'] == 'vmess':
+                        abbr_type = 'VMS'
+                    elif x['type'] == 'trojan':
+                        abbr_type = 'TJN'
+                    elif x['type'] == 'snell':
+                        abbr_type = 'SNL'
+                    elif x['type'] == 'http':
+                        abbr_type = 'HTT'
+                    elif x['type'] == 'socks5':
+                        abbr_type = 'SK5'
+                    
+                    try:                       
                         country_count[country] = country_count[country] + 1
                         #x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(count)
-                        x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country])
+                        x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country]) + " " + abbr_type
                     except:
                         country_count[country] = 1
                         #x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(count)
-                        x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country])
+                        x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country]) + " " + abbr_type
+                        
                     clash['proxies'].append(x)
                     clash['proxy-groups'][0]['proxies'].append(x['name'])
                     clash['proxy-groups'][1]['proxies'].append(x['name'])
