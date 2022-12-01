@@ -52,7 +52,7 @@ jobs:
         python main.py; rm ./input.yaml
         cp ./check_profile.ini ./subconverter && cp ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "check" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./clashcheck/data/input.yaml
         cp ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
-        rm data/input.yaml；　rm -rf ./__pycache__
+        rm ./data/input.yaml; rm -rf ./__pycache__
         cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./　&& rm ./clashcheck/data/check.yaml
         rm ./output.yaml
         rm -rf ./__pycache__
