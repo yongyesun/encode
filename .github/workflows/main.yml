@@ -35,18 +35,11 @@ jobs:
          wget ${{ secrets.Check_File2 }} -O ./nodeencode2 -q
          wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz
          tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
-         #rm ./subconverter_linux32.tar.gz
          rm ./Country.mmdb
          wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
          cp ./nodeencode ./subconverter && rm ./nodeencode
          cp ./nodeencode2 ./subconverter && rm ./nodeencode2
-         #rm ./nodeencode
-         #rm ./nodeencode2
          cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml
-         #cp ./test_profile.ini ./subconverter
-         #cp ./example_external_config.ini ./subconverter
-         #./subconverter/subconverter -g --artifact "node"
-         #cp ./subconverter/input.yaml ./
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
     - name: 上传文件在 github actions
       uses: actions/upload-artifact@v2
@@ -59,10 +52,8 @@ jobs:
         python main.py; rm ./input.yaml
         cp ./check_profile.ini ./subconverter && cp ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "check" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./clashcheck/data/input.yaml
         cp ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
-        rm data/input.yaml
-        cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./　&& rm ./clashcheck/data/check.yaml　　　　　
-        #./subconverter/subconverter -g --artifact "base64"
-        #cp ./subconverter/output ./
+        rm data/input.yaml；　rm -rf ./__pycache__
+        cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./　&& rm ./clashcheck/data/check.yaml
         rm ./output.yaml
         rm -rf ./__pycache__
         rm -rf ./subconverter
