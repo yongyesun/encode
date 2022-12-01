@@ -40,7 +40,7 @@ def init():
               'log-level': 'silent', 'proxies': proxyconfig['proxies']}
 
     with open('./temp/working.yaml', 'w') as file:
-        file = yaml.dump(config, file)
+        file = yaml.dump(config, file, sort_keys=False)
 
     # return all variables
     return http_port, api_port, threads, source, timeout, outfile, proxyconfig, apiurl, testurl, config
