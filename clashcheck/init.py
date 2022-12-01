@@ -34,7 +34,7 @@ def init():
     apiurl = 'http://' + baseurl
 
     # filter config files
-    proxyconfig = filter(proxyconfig)
+    #proxyconfig = filter(proxyconfig)
 
     config = {'port': http_port, 'external-controller': baseurl, 'mode': 'global',
               'log-level': 'silent', 'proxies': proxyconfig['proxies']}
