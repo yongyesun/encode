@@ -56,8 +56,9 @@ jobs:
         path: input.yaml
     - name: 执行任务2    
       run:  |      
-        python main.py; rm ./input.yaml        
-        cp ./output.yaml ./clashcheck/data/input.yaml && cp ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
+        python main.py; rm ./input.yaml
+        cp ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "check" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./clashcheck/data/input.yaml
+        cp ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
         #rm data/input.yaml
         cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./
         #./subconverter/subconverter -g --artifact "base64"
