@@ -42,7 +42,7 @@ jobs:
          cp ./nodeencode2 ./subconverter && rm ./nodeencode2
          #rm ./nodeencode
          #rm ./nodeencode2
-         cp -rf ./generate.ini ./subconverter && cp ./test_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml
+         cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml
          #cp ./test_profile.ini ./subconverter
          #cp ./example_external_config.ini ./subconverter
          #./subconverter/subconverter -g --artifact "node"
