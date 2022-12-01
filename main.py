@@ -1,6 +1,6 @@
 import time
 import yaml
-from yaml.loader import BaseLoader
+from yaml.loader import BaseLoader, SafeLoader
 from parse import makeclash
 from clash import push
         
@@ -9,7 +9,7 @@ proxy_list=[]
 if __name__ == '__main__':
   nodes = 'input.yaml'
   with open(nodes, 'r') as reader:       
-                working = yaml.load(reader, Loader=BaseLoader)
+                working = yaml.load(reader, Loader=SafeLoader)
                 for x in working['proxies']:
                         proxy_list.append(x)
                 print("before",len(proxy_list))
