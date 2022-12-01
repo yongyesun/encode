@@ -25,5 +25,6 @@ if __name__ == '__main__':
             p.join
         time.sleep(5)
         alive=list(alive)
+        print("alive",len(alive))
         push(alive,outfile)
         clean(clash)   
