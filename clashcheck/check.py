@@ -9,3 +9,4 @@ def check(alive, proxy, apiurl, sema, timeout, testurl):
             alive.append(proxy)
     except: pass
     sema.release()
+    print("alive",len(alive))
