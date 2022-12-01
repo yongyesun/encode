@@ -16,7 +16,7 @@ if __name__ == '__main__':
         processes =[]
         sema = Semaphore(threads)
         time.sleep(5)
-        #subprocess.Popen('sudo netstat -lnp',shell=True)
+        subprocess.Popen('sudo netstat -lnp',shell=True)
         for i in tqdm(range(int(len(config['proxies']))), desc="Testing"):
             sema.acquire()
             p = Process(target=check, args=(alive,config['proxies'][i],apiurl,sema,timeout,testurl))
