@@ -48,7 +48,7 @@ jobs:
         path: ./input.yaml
     - name: 执行任务2    
       run:  |             
-         python main.py; rm ./input.yaml; rm -rf ./__pycache__         
+         sed -i 's/!<str> //g' ./input.yaml && python main.py; rm ./input.yaml; rm -rf ./__pycache__         
          #cp ./check_profile.ini ./subconverter && cp ./output.yaml ./subconverter && rm ./output.yaml && ./subconverter/subconverter -g --artifact "check" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./clashcheck/data/input.yaml && rm ./subconverter/input.yaml
          mv ./output.yaml ./clashcheck/data/input.yaml        
          cp -rf ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
