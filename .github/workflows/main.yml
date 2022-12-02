@@ -42,7 +42,7 @@ jobs:
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
          python main.py; rm ./input.yaml; rm -rf ./__pycache__
          #cp ./check_profile.ini ./subconverter && cp ./output.yaml ./subconverter && rm ./output.yaml && ./subconverter/subconverter -g --artifact "check" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./clashcheck/data/input.yaml && rm ./subconverter/input.yaml
-         cp ./output.yaml ./clashcheck/data/input.yaml
+         mv ./output.yaml ./clashcheck/data/input.yaml
     - name: 上传文件在 github actions
       uses: actions/upload-artifact@v2
       if: env.UPLOAD_CONFIG == 'true'
@@ -53,7 +53,7 @@ jobs:
       run:  |             
         cp -rf ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
         rm ./data/input.yaml; rm -rf ./__pycache__
-        cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && rm ./clashcheck/data/check.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./　&& rm ./subconverter/output                
+        cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && rm ./clashcheck/data/check.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./output　&& rm ./subconverter/output                
         rm -rf ./subconverter
     - name: 提交更改
       run: |
