@@ -53,7 +53,7 @@ jobs:
          mv ./output.yaml ./clashcheck/data/input.yaml        
          cp -rf ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
          rm ./data/input.yaml; rm -rf ./__pycache__
-         cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && rm ./clashcheck/data/check.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./output　&& rm ./subconverter/output                
+         cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && rm ./clashcheck/data/check.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./ && rm ./subconverter/output             
          rm -rf ./subconverter
     - name: 提交更改
       run: |
