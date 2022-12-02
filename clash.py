@@ -189,9 +189,11 @@ def push(list):
                     iplist[ip].append(x)  
                     
                 count = count + 1
+                print('count',count)
 
             except:
-                continue
+                print('continue')
+                continue                
 
     for ip in iplist:     
         for x in iplist[ip]:
