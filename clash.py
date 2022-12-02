@@ -169,13 +169,10 @@ def push(list):
                         iplist[ip] = []
                         iplist[ip].append(x['port'])                     
                 """    
-                """
-                for i in x:
-                    if x[i] =='false':
-                        x[i] = False
-                    elif x[i] =='true':
-                        x[i] = True
-                """
+                
+                if 'password' in x:
+                    x['password'] = str(x['password'])
+                
                 try:
                     iplist[ip].append(x)
                 except:
