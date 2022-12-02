@@ -26,7 +26,7 @@ def push(list):
                 x = list[i]
                 authentication = ''
                 x['port'] = int(x['port'])
-                #"""
+                """
                 try:
                     ip = str(socket.gethostbyname(x["server"]))
                 except:
@@ -35,7 +35,7 @@ def push(list):
                     country = str(countrify.get(ip)['country']['iso_code'])
                 except:
                     country = 'UN'
-                #"""
+                """
                 if x['type'] == 'ss':
                     try:
                         if x['cipher'] not in ss_supported_ciphers:
@@ -54,8 +54,8 @@ def push(list):
                                 iplist[ip] = []
                                 iplist[ip].append(x['port'])
                         """
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSS'
-                        #x['name'] = str(count) + ' ' + 'SSS'
+                        #x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSS'
+                        x['name'] = str(count) + ' ' + 'SSS'
                         authentication = 'password'
                     except:
                         continue
@@ -77,8 +77,8 @@ def push(list):
                                 iplist[ip].append(x['port'])
                         """
                         authentication = 'password'
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSR'
-                        #x['name'] = str(count) + ' ' + 'SSR'
+                        #x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSR'
+                        x['name'] = str(count) + ' ' + 'SSR'
                     except:
                         continue
                 elif x['type'] == 'vmess':
@@ -100,8 +100,8 @@ def push(list):
                             continue
                         if int(len(x['uuid'])) < 36:
                             continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'VMS'
-                        #x['name'] = str(count) + ' ' + 'VMS'
+                        #x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'VMS'
+                        x['name'] = str(count) + ' ' + 'VMS'
                         authentication = 'uuid'
                     except:
                         continue
@@ -113,8 +113,8 @@ def push(list):
                         if 'skip-cert-verify' in x:
                             if x['skip-cert-verify'] not in [False, True]:
                                 continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'TJN'
-                        #x['name'] = str(count) + ' ' + 'TJN'
+                        #x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'TJN'
+                        x['name'] = str(count) + ' ' + 'TJN'
                         authentication = 'password'
                     except:
                         continue
@@ -126,8 +126,8 @@ def push(list):
                         if 'skip-cert-verify' in x:
                             if x['skip-cert-verify'] not in [False, True]:
                                 continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SNL'
-                        #x['name'] = str(count) + ' ' + 'SNL'
+                        #x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SNL'
+                        x['name'] = str(count) + ' ' + 'SNL'
                         authentication = 'psk'
                     except:
                         continue
@@ -136,8 +136,8 @@ def push(list):
                         if 'tls' in x:
                             if x['tls'] not in [False, True]:
                                 continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'HTT'
-                        #x['name'] = str(count) + ' ' + 'HTT'
+                        #x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'HTT'
+                        x['name'] = str(count) + ' ' + 'HTT'
                         # authentication = 'userpass'
                     except:
                         continue
@@ -152,8 +152,8 @@ def push(list):
                         if 'skip-cert-verify' in x:
                             if x['skip-cert-verify'] not in [False, True]:
                                 continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SK5'
-                        #x['name'] = str(count) + ' ' + 'SK5'
+                        #x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SK5'
+                        x['name'] = str(count) + ' ' + 'SK5'
                         # authentication = 'userpass'
                     except:
                         continue
@@ -183,10 +183,10 @@ def push(list):
                     x['password'] = str(x['password'])
 
                 try:
-                    iplist[ip].append(x)
+                    iplist[x['server']].append(x)
                 except:
-                    iplist[ip] = []
-                    iplist[ip].append(x)  
+                    iplist[x['server']] = []
+                    iplist[x['server']].append(x)  
 
                 count = count + 1
 
