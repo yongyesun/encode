@@ -46,6 +46,6 @@ def init():
     return http_port, api_port, threads, source, timeout, outfile, proxyconfig, apiurl, testurl, config
 
 def clean(clash):
-    #shutil.rmtree('./temp')
+    shutil.rmtree('./temp')
     clash.terminate()
     exit(0)
