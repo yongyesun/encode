@@ -32,12 +32,10 @@ jobs:
          wget ${{ secrets.Check_File }} -O ./nodeencode -q
          #base64 ./nodelist > nodeencode -w 0
          wget ${{ secrets.Check_File2 }} -O ./nodeencode2 -q
-         wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz
-         tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
-         rm ./Country.mmdb
+         wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz && tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
+         rm ./Country.mmdb || ls
          wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
-         cp ./nodeencode ./subconverter && rm ./nodeencode
-         cp ./nodeencode2 ./subconverter && rm ./nodeencode2
+         mv ./nodeencode ./subconverter; mv ./nodeencode2 ./subconverter
          cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml && rm ./subconverter/input.yaml
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
     - name: 上传文件在 github actions
@@ -49,11 +47,11 @@ jobs:
     - name: 执行任务2    
       run:  |             
          sed -i 's/!<str> //g' ./input.yaml && python main.py; rm ./input.yaml; rm -rf ./__pycache__         
-         #cp ./check_profile.ini ./subconverter && cp ./output.yaml ./subconverter && rm ./output.yaml && ./subconverter/subconverter -g --artifact "check" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./clashcheck/data/input.yaml && rm ./subconverter/input.yaml
+         #cp ./check_profile.ini ./subconverter && mv ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "check" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./clashcheck/data/input.yaml && rm ./subconverter/input.yaml
          mv ./output.yaml ./clashcheck/data/input.yaml        
          cp -rf ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
          rm ./data/input.yaml; rm -rf ./__pycache__
-         cd ..; cp ./clashcheck/data/check.yaml ./subconverter/output.yaml && rm ./clashcheck/data/check.yaml && ./subconverter/subconverter -g --artifact "base64" && cp ./subconverter/output ./ && rm ./subconverter/output             
+         cd ..; mv ./clashcheck/data/check.yaml ./subconverter/output.yaml && ./subconverter/subconverter -g --artifact "base64" && mv ./subconverter/output ./       
          rm -rf ./subconverter
     - name: 提交更改
       run: |
