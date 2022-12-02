@@ -38,21 +38,21 @@ jobs:
          mv ./nodeencode ./subconverter; mv ./nodeencode2 ./subconverter
          cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml && rm ./subconverter/input.yaml
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+         sed -i 's/!<str> //g' ./input.yaml && python main.py; rm ./input.yaml
     - name: 上传文件在 github actions
       uses: actions/upload-artifact@v2
       if: env.UPLOAD_CONFIG == 'true'
       with:
         name: .yaml_${{ env.Compile_Date }}
-        path: ./input.yaml
+        path: ./output.yaml
     - name: 执行任务2    
-      run:  |             
-         sed -i 's/!<str> //g' ./input.yaml && python main.py; rm ./input.yaml; rm -rf ./__pycache__         
+      run:  |                      
          #cp ./check_profile.ini ./subconverter && mv ./output.yaml ./subconverter && ./subconverter/subconverter -g --artifact "check" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./clashcheck/data/input.yaml && rm ./subconverter/input.yaml
          mv ./output.yaml ./clashcheck/data/input.yaml        
          cp -rf ./Country.mmdb ./clashcheck && cd ./clashcheck && chmod 777 ./clash-linux-amd64 && python main.py
          rm ./data/input.yaml; rm -rf ./__pycache__
          cd ..; mv ./clashcheck/data/check.yaml ./subconverter/output.yaml && ./subconverter/subconverter -g --artifact "base64" && mv ./subconverter/output ./       
-         rm -rf ./subconverter
+         rm -rf ./subconverter; rm -rf ./__pycache__
     - name: 提交更改
       run: |
          git config core.ignorecase false
