@@ -143,7 +143,8 @@ def filter(config):
                 x = list[i]
                 try:
                     float(x['password'])
-                    x['password'] = '!<str> ' + x['password']
+                    x['password'] = '!<str> ' + str(x['password'])
+                    print('password change to type str')
                 finally:
                     """
                     authentication = ''
