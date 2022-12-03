@@ -67,7 +67,10 @@ def push(list, outfile):
                 country_count[country] = 1
                 #x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(count)
                 x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country]) + " " + abbr_type
-
+            
+            if 'password' in x:
+                x['password'] = str(x['password'])
+                    
             clash['proxies'].append(x)
             clash['proxy-groups'][0]['proxies'].append(x['name'])
             clash['proxy-groups'][1]['proxies'].append(x['name'])
