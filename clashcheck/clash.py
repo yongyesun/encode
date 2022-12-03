@@ -141,137 +141,143 @@ def filter(config):
         for i in tqdm(range(int(len(list))), desc="Parse"):
             try:
                 x = list[i]
-                authentication = ''
-                x['port'] = int(x['port'])
                 try:
-                    ip = str(socket.gethostbyname(x["server"]))
-                except:
-                    ip = x['server']
-                try:
-                    country = str(countrify.get(ip)['country']['iso_code'])
-                except:
-                    country = 'UN'
-                if x['type'] == 'ss':
+                    float(x['password'])
+                    x['password'] = '!<str> ' + x['password']
+                finally:
+                    """
+                    authentication = ''
+                    x['port'] = int(x['port'])
                     try:
-                        if x['cipher'] not in ss_supported_ciphers:
-                            ss_omit_cipher_unsupported = ss_omit_cipher_unsupported + 1
+                        ip = str(socket.gethostbyname(x["server"]))
+                    except:
+                        ip = x['server']
+                    try:
+                        country = str(countrify.get(ip)['country']['iso_code'])
+                    except:
+                        country = 'UN'
+                    if x['type'] == 'ss':
+                        try:
+                            if x['cipher'] not in ss_supported_ciphers:
+                                ss_omit_cipher_unsupported = ss_omit_cipher_unsupported + 1
+                                continue
+                            if country != 'CN':
+                                if ip in iplist:
+                                    ss_omit_ip_dupe = ss_omit_ip_dupe + 1
+                                    continue
+                                else:
+                                    iplist[ip] = []
+                                    iplist[ip].append(x['port'])
+                            x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSS'
+                            authentication = 'password'
+                        except:
                             continue
-                        if country != 'CN':
-                            if ip in iplist:
-                                ss_omit_ip_dupe = ss_omit_ip_dupe + 1
+                    elif x['type'] == 'ssr':
+                        try:
+                            if x['cipher'] not in ss_supported_ciphers:
                                 continue
-                            else:
-                                iplist[ip] = []
-                                iplist[ip].append(x['port'])
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSS'
-                        authentication = 'password'
-                    except:
-                        continue
-                elif x['type'] == 'ssr':
-                    try:
-                        if x['cipher'] not in ss_supported_ciphers:
+                            if x['obfs'] not in ssr_supported_obfs:
+                                continue
+                            if x['protocol'] not in ssr_supported_protocol:
+                                continue
+                            if country != 'CN':
+                                if ip in iplist:
+                                    continue
+                                else:
+                                    iplist.append(ip)
+                                    iplist[ip].append(x['port'])
+                            authentication = 'password'
+                            x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSR'
+                        except:
                             continue
-                        if x['obfs'] not in ssr_supported_obfs:
+                    elif x['type'] == 'vmess':
+                        try:
+                            if 'udp' in x:
+                                if x['udp'] not in [False, True]:
+                                    continue
+                            if 'tls' in x:
+                                if x['tls'] not in [False, True]:
+                                    continue
+                            if 'skip-cert-verify' in x:
+                                if x['skip-cert-verify'] not in [False, True]:
+                                    continue
+                            if x['cipher'] not in vmess_supported_ciphers:
+                                continue
+                            x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'VMS'
+                            authentication = 'uuid'
+                        except:
                             continue
-                        if x['protocol'] not in ssr_supported_protocol:
+                    elif x['type'] == 'trojan':
+                        try:
+                            if 'udp' in x:
+                                if x['udp'] not in [False, True]:
+                                    continue
+                            if 'skip-cert-verify' in x:
+                                if x['skip-cert-verify'] not in [False, True]:
+                                    continue
+                            x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'TJN'
+                            authentication = 'password'
+                        except:
                             continue
-                        if country != 'CN':
-                            if ip in iplist:
-                                continue
-                            else:
-                                iplist.append(ip)
-                                iplist[ip].append(x['port'])
-                        authentication = 'password'
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SSR'
-                    except:
-                        continue
-                elif x['type'] == 'vmess':
-                    try:
-                        if 'udp' in x:
-                            if x['udp'] not in [False, True]:
-                                continue
-                        if 'tls' in x:
-                            if x['tls'] not in [False, True]:
-                                continue
-                        if 'skip-cert-verify' in x:
-                            if x['skip-cert-verify'] not in [False, True]:
-                                continue
-                        if x['cipher'] not in vmess_supported_ciphers:
+                    elif x['type'] == 'snell':
+                        try:
+                            if 'udp' in x:
+                                if x['udp'] not in [False, True]:
+                                    continue
+                            if 'skip-cert-verify' in x:
+                                if x['skip-cert-verify'] not in [False, True]:
+                                    continue
+                            x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SNL'
+                            authentication = 'psk'
+                        except:
                             continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'VMS'
-                        authentication = 'uuid'
-                    except:
-                        continue
-                elif x['type'] == 'trojan':
-                    try:
-                        if 'udp' in x:
-                            if x['udp'] not in [False, True]:
-                                continue
-                        if 'skip-cert-verify' in x:
-                            if x['skip-cert-verify'] not in [False, True]:
-                                continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'TJN'
-                        authentication = 'password'
-                    except:
-                        continue
-                elif x['type'] == 'snell':
-                    try:
-                        if 'udp' in x:
-                            if x['udp'] not in [False, True]:
-                                continue
-                        if 'skip-cert-verify' in x:
-                            if x['skip-cert-verify'] not in [False, True]:
-                                continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SNL'
-                        authentication = 'psk'
-                    except:
-                        continue
-                elif x['type'] == 'http':
-                    try:
-                        if 'tls' in x:
-                            if x['tls'] not in [False, True]:
-                                continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'HTT'
-                        # authentication = 'userpass'
-                    except:
-                        continue
-                elif x['type'] == 'socks5':
-                    try:
-                        if 'tls' in x:
-                            if x['tls'] not in [False, True]:
-                                continue
-                        if 'udp' in x:
-                            if x['udp'] not in [False, True]:
-                                continue
-                        if 'skip-cert-verify' in x:
-                            if x['skip-cert-verify'] not in [False, True]:
-                                continue
-                        x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SK5'
-                        # authentication = 'userpass'
-                    except:
-                        continue
-                else:
-                    continue
-
-                if ip in iplist and x['port'] in iplist[ip]:
-                    if country != 'CN':
-                        continue
+                    elif x['type'] == 'http':
+                        try:
+                            if 'tls' in x:
+                                if x['tls'] not in [False, True]:
+                                    continue
+                            x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'HTT'
+                            # authentication = 'userpass'
+                        except:
+                            continue
+                    elif x['type'] == 'socks5':
+                        try:
+                            if 'tls' in x:
+                                if x['tls'] not in [False, True]:
+                                    continue
+                            if 'udp' in x:
+                                if x['udp'] not in [False, True]:
+                                    continue
+                            if 'skip-cert-verify' in x:
+                                if x['skip-cert-verify'] not in [False, True]:
+                                    continue
+                            x['name'] = str(flag.flag(country)) + ' ' + str(country) + ' ' + str(count) + ' ' + 'SK5'
+                            # authentication = 'userpass'
+                        except:
+                            continue
                     else:
-                        if x[authentication] in passlist:
+                        continue
+
+                    if ip in iplist and x['port'] in iplist[ip]:
+                        if country != 'CN':
                             continue
                         else:
-                            passlist.append(x[authentication])
-                else:
-                    try:
-                        iplist[ip].append(x['port'])
-                    except:
-                        iplist[ip] = []
-                        iplist[ip].append(x['port'])
+                            if x[authentication] in passlist:
+                                continue
+                            else:
+                                passlist.append(x[authentication])
+                    else:
+                        try:
+                            iplist[ip].append(x['port'])
+                        except:
+                            iplist[ip] = []
+                            iplist[ip].append(x['port'])
 
-                clash['proxies'].append(x)
-                clash['proxy-groups'][0]['proxies'].append(x['name'])
-                clash['proxy-groups'][1]['proxies'].append(x['name'])
-                count = count + 1
+                    """
+                    clash['proxies'].append(x)
+                    clash['proxy-groups'][0]['proxies'].append(x['name'])
+                    clash['proxy-groups'][1]['proxies'].append(x['name'])
+                    count = count + 1
 
             except:
                 #print('shitwentwrong' + str(x))
