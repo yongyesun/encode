@@ -179,9 +179,6 @@ def push(list):
                         iplist[ip].append(x['port'])                     
                 """    
 
-                if 'password' in x:
-                    x['password'] = str(x['password'])
-
                 try:
                     iplist[x['server']].append(x)
                 except:
