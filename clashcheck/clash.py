@@ -29,53 +29,49 @@ def push(list, outfile):
                 except:
             """
             try:
-                float(x['password'])
-                x['password'] = '!<str> ' + x['password']
-            finally:
-                try:
-                    ip = str(socket.gethostbyname(x["server"]))
-                except:
-                    ip = str(x["server"])
-                try:
-                    country = str(countrify.get(ip)['country']['iso_code'])
-                except:
-                    country = 'UN'
-                """
-                if country == 'TW' or country == 'MO' or country == 'HK':
-                    flagcountry = 'CN'
-                else:
-                    flagcountry = country
-                """
+                ip = str(socket.gethostbyname(x["server"]))
+            except:
+                ip = str(x["server"])
+            try:
+                country = str(countrify.get(ip)['country']['iso_code'])
+            except:
+                country = 'UN'
+            """
+            if country == 'TW' or country == 'MO' or country == 'HK':
+                flagcountry = 'CN'
+            else:
                 flagcountry = country
+            """
+            flagcountry = country
 
-                if x['type'] == 'ss':
-                    abbr_type = 'SSS'
-                elif x['type'] == 'ssr':
-                    abbr_type = 'SSR'
-                elif x['type'] == 'vmess':
-                    abbr_type = 'VMS'
-                elif x['type'] == 'trojan':
-                    abbr_type = 'TJN'
-                elif x['type'] == 'snell':
-                    abbr_type = 'SNL'
-                elif x['type'] == 'http':
-                    abbr_type = 'HTT'
-                elif x['type'] == 'socks5':
-                    abbr_type = 'SK5'
+            if x['type'] == 'ss':
+                abbr_type = 'SSS'
+            elif x['type'] == 'ssr':
+                abbr_type = 'SSR'
+            elif x['type'] == 'vmess':
+                abbr_type = 'VMS'
+            elif x['type'] == 'trojan':
+                abbr_type = 'TJN'
+            elif x['type'] == 'snell':
+                abbr_type = 'SNL'
+            elif x['type'] == 'http':
+                abbr_type = 'HTT'
+            elif x['type'] == 'socks5':
+                abbr_type = 'SK5'
 
-                try:                       
-                    country_count[country] = country_count[country] + 1
-                    #x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(count)
-                    x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country]) + " " + abbr_type
-                except:
-                    country_count[country] = 1
-                    #x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(count)
-                    x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country]) + " " + abbr_type
+            try:                       
+                country_count[country] = country_count[country] + 1
+                #x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(count)
+                x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country]) + " " + abbr_type
+            except:
+                country_count[country] = 1
+                #x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(count)
+                x['name'] = str(flag.flag(flagcountry)) + " " + country + " " + str(country_count[country]) + " " + abbr_type
 
-                clash['proxies'].append(x)
-                clash['proxy-groups'][0]['proxies'].append(x['name'])
-                clash['proxy-groups'][1]['proxies'].append(x['name'])
-                count = count + 1
+            clash['proxies'].append(x)
+            clash['proxy-groups'][0]['proxies'].append(x['name'])
+            clash['proxy-groups'][1]['proxies'].append(x['name'])
+            count = count + 1
 
     with open(outfile, 'w') as writer:
         yaml.dump(clash, writer, sort_keys=False)
