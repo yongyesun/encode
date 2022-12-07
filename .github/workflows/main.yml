@@ -39,7 +39,10 @@ jobs:
          rm ./Country.mmdb || ls
          wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
          mv ./nodeencode ./subconverter
+         mv ./nodeencode1 ./subconverter
          mv ./nodeencode2 ./subconverter
+         mv ./nodeencode3 ./subconverter
+         mv ./nodeencode4 ./subconverter
          cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml && rm ./subconverter/input.yaml
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
          sed -i 's/!<str> //g' ./input.yaml && python main.py
