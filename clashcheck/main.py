@@ -5,7 +5,6 @@ from check import check
 from tqdm import tqdm
 from init import init, clean
 from clash import push, checkenv, checkuse
-from parse import makeclash
 
 if __name__ == '__main__':
     with Manager() as manager:
@@ -27,7 +26,6 @@ if __name__ == '__main__':
             p.join
         time.sleep(5)
         alive=list(alive)
-        print("alive",len(alive))
-        proxies = makeclash(alive)
-        push(proxies,outfile)
+        print("alive",len(alive))    
+        push(alive,outfile)
         clean(clash)   
