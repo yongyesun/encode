@@ -47,7 +47,7 @@ jobs:
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
          sed -i 's/!<str> //g' ./input.yaml && python main.py
     - name: 上传文件在 github actions
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: env.UPLOAD_CONFIG == 'true'
       with:
         name: .yaml_${{ env.Compile_Date }}
