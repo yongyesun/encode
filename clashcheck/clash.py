@@ -144,7 +144,7 @@ def filter(config):
                 try:
                     float(x['password'])
                     x['password'] = '!<str> ' + str(x['password'])
-                    print('password change to type str')
+                    print('password change to type str',x['password'])
                 finally:
                     """
                     authentication = ''
@@ -275,10 +275,16 @@ def filter(config):
                             iplist[ip].append(x['port'])
 
                     """
-                    clash['proxies'].append(x)
-                    clash['proxy-groups'][0]['proxies'].append(x['name'])
-                    clash['proxy-groups'][1]['proxies'].append(x['name'])
-                    count = count + 1
+                    
+                    try:
+                        float(x['server'])
+                        print('server float', x['server'])
+                        continue
+                    except:
+                        clash['proxies'].append(x)
+                        clash['proxy-groups'][0]['proxies'].append(x['name'])
+                        clash['proxy-groups'][1]['proxies'].append(x['name'])
+                        count = count + 1
 
             except:
                 #print('shitwentwrong' + str(x))
