@@ -4,7 +4,7 @@ def makeclash(dictin):
     proxies_noname = []
     for y in dictin:
         #try:
-        z = y
+        z = y.copy()
         y.pop('name')
         if y in proxies_noname:
             pass
