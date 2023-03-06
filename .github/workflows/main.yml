@@ -34,7 +34,7 @@ jobs:
          #wget ${{ secrets.Check_File2 }} -O ./nodeencode2 -q
          #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/res/nod-0.txt -O ./nodeencode1
          #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/res/nod-1.txt -O ./nodeencode3
-         wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/o/node.txt -O ./nodeencode4
+         wget https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/o/node.txt -O ./nodeencode4
          wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz && tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
          rm ./Country.mmdb || ls
          wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
