@@ -40,7 +40,7 @@ jobs:
          rm ./Country.mmdb || ls
          wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
          wget ${{ secrets.Check_File3 }} -O ./sub/sub_list.json -q
-         python ./sub/slist_merge.py && mv ./sub/sub_merge_base64.txt ./nodeencode0
+         python ./sub/list_merge.py && mv ./sub/sub_merge_base64.txt ./nodeencode0
          #mv ./nodeencode ./subconverter
          mv ./nodeencode1 ./subconverter
          #mv ./nodeencode2 ./subconverter
