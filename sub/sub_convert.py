@@ -10,7 +10,7 @@ import requests
 import socket
 import urllib.parse
 from requests.adapters import HTTPAdapter
-from utils import EMOJI
+#from utils import EMOJI
 
 
 class SubConvert:
