@@ -5,7 +5,7 @@ import json
 import re
 import yaml
 
-import geoip2.database
+#import geoip2.database
 import requests
 import socket
 import urllib.parse
