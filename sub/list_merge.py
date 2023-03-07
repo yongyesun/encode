@@ -7,7 +7,7 @@ from urllib import request
 import yaml
 
 from list_update import UpdateUrl
-from sub_convert import SubConvert
+#from sub_convert import SubConvert
 from cv2box.utils import os_call
 
 # 文件路径定义
@@ -69,9 +69,12 @@ class SubMerge:
         print('Merging nodes...\n')
         content_raw = ''.join(
             content_list)  # https://python3-cookbook.readthedocs.io/zh_CN/latest/c02/p14_combine_and_concatenate_strings.html
-        content_yaml = self.sc.main(content_raw, 'content', 'YAML',
-                                    {'dup_rm_enabled': True, 'format_name_enabled': True})
-        content_write(yaml_p, content_yaml)
+        #content_yaml = self.sc.main(content_raw, 'content', 'YAML',
+        #                            {'dup_rm_enabled': True, 'format_name_enabled': True})
+        #content_write(yaml_p, content_yaml)
+        
+        content_base64 = self.sc.base64_encode(content_raw)
+        content_write(f'{sub_merge_path}/sub_merge_base64.txt', content_base64)
 
         # content_base64 = self.sc.base64_encode(content_raw)
         # content = content_raw
