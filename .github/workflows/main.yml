@@ -39,15 +39,12 @@ jobs:
          wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz && tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
          rm ./Country.mmdb || ls
          wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
-         wget ${{ secrets.Check_File3 }} -O ./sub/sub_list.json -q
-         python ./sub/list_merge.py && mv ./sub/sub_merge_base64.txt ./nodeencode0
          #mv ./nodeencode ./subconverter
          mv ./nodeencode1 ./subconverter
          #mv ./nodeencode2 ./subconverter
          #mv ./nodeencode3 ./subconverter
          mv ./nodeencode4 ./subconverter
          mv ./nodeencode5 ./subconverter
-         mv ./nodeencode0 ./subconverter
          cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml && rm ./subconverter/input.yaml
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
          sed -i 's/!<str> //g' ./input.yaml && python main.py
