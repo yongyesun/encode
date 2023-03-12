@@ -385,7 +385,7 @@ if __name__ == '__main__':
     # sub_merge.readme_update(readme, sub_list)
 
     # fixed convertor in default method
-     subs.get_subs(sub_list)
+    subs.get_subs(sub_list)
     # sub_merge.readme_update(readme, sub_list)
 
     # using corresponding proxies method
