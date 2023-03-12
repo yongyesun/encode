@@ -628,8 +628,9 @@ class sub_convert():
 
             print("Formatting Completed!")
             proxies_list = sub_content['proxies']
-
+            print("1")
             protocol_url = []
+            pirnt("2")
             # 不同节点订阅链接内容 https://github.com/hoochanlon/fq-book/blob/master/docs/append/srvurl.md
             for index in range(len(proxies_list)):
                 try:
@@ -749,14 +750,14 @@ class sub_convert():
                 except Exception as e:
                     print(f'yaml decode Error in coverting servers {e} 错误')
 
-            #yaml_content = ''.join(protocol_url)
-
+            yaml_content = ''.join(protocol_url)
+            print("3")
             # note added here
-            #yaml_content = list(
-            #    filter(lambda x: x != '', yaml_content.split("\n")))
             yaml_content = list(
-                filter(lambda x: x != '', protocol_url))
+                filter(lambda x: x != '', yaml_content.split("\n")))
+            print("4")
             yaml_content = "\n".join(yaml_content)
+            print("5")
 
             return yaml_content
         except Exception as err:
