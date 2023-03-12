@@ -749,16 +749,19 @@ class sub_convert():
                 except Exception as e:
                     print(f'yaml decode Error in coverting servers {e} 错误')
 
-            yaml_content = "\n".join(protocol_url)
+            #yaml_content = ''.join(protocol_url)
 
             # note added here
+            #yaml_content = list(
+            #    filter(lambda x: x != '', yaml_content.split("\n")))
             yaml_content = list(
-                filter(lambda x: x != '', yaml_content.split("\n")))
+                filter(lambda x: x != '', protocol_url))
             yaml_content = "\n".join(yaml_content)
 
             return yaml_content
         except Exception as err:
             print(f'yaml decode 发生 {err} 错误')
+            print(repr(err))
             return '订阅内容解析错误'
 
     def base64_decode(url_content):  # Base64 转换为 URL 链接内容
