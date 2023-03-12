@@ -372,7 +372,7 @@ class sub_merge():
 
 
 if __name__ == '__main__':
-    update_url.update_main(use_airport=False, airports_id=[
+    update_url.update_main(use_airport=True, airports_id=[
                            5], sub_list_json="./sub/sub_list.json")
     sub_merge.geoip_update(
         'https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb')
