@@ -749,7 +749,7 @@ class sub_convert():
                 except Exception as e:
                     print(f'yaml decode Error in coverting servers {e} 错误')
 
-            yaml_content = ''.join(protocol_url)
+            yaml_content = "\n".join(protocol_url)
 
             # note added here
             yaml_content = list(
