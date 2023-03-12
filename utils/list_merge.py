@@ -385,11 +385,11 @@ if __name__ == '__main__':
     # sub_merge.readme_update(readme, sub_list)
 
     # fixed convertor in default method
-    # subs.get_subs(sub_list)
+     subs.get_subs(sub_list)
     # sub_merge.readme_update(readme, sub_list)
 
     # using corresponding proxies method
-     subs.get_subs_v2(sub_list)
+    # subs.get_subs_v2(sub_list)
     # sub_merge.readme_update(readme, sub_list)
 
     # eject sub converting using local method and using sub convertor instead (only yaml available there is no
