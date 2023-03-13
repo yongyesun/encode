@@ -98,6 +98,7 @@ class subs:
             'dup_rm_enabled': True, 'format_name_enabled': True})
 
         yaml_proxies = content_yaml.split('\n')[1:]
+        print(yaml_proxies)
         temp = list(filter(lambda x: re.search(ipv6, x) ==
                     None or re.search(ipv4, x) != None, yaml_proxies))
         temp = list(filter(lambda x: re.search(
