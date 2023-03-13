@@ -114,7 +114,7 @@ class subs:
 
         print(f"found {yaml_proxies.__len__() - temp.__len__()} bad lines :)")
         ###temp###
-#         print(temp)
+        print(temp)
         ##########
         content_yaml = "\n".join(temp)
         if content_yaml[-1:] == '\n':
