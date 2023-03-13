@@ -120,8 +120,8 @@ class subs:
 #        print(temp)
         ##########
         content_yaml = "\n".join(temp)
-        if content_yaml[-1:] == '\n':
-            content_yaml[-1:] = ''
+        #if content_yaml[-1:] == '\n':
+        #    content_yaml[-1:] = ''
         content_yaml = 'proxies:\n' + content_yaml
 
         # todo removed dup
