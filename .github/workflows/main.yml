@@ -49,7 +49,7 @@ jobs:
          mv ./nodeencode6 ./subconverter
          cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml && rm ./subconverter/input.yaml
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-         sed -i 's/!<str> //g' ./input.yaml # && 
+         sed -i 's/!<str> //g' ./input.yaml && sed -i 's/name: :/name: /g' ./input.yaml
     - name: 上传文件在 github actions
       uses: actions/upload-artifact@v3
       if: env.UPLOAD_CONFIG == 'true'
