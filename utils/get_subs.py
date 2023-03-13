@@ -96,14 +96,17 @@ class subs:
         
         content_yaml = sub_convert.main(content_raw, 'content', 'YAML', {
             'dup_rm_enabled': True, 'format_name_enabled': True})
-        """            
+                
         yaml_proxies = content_yaml.split('\n')[1:]
+        """
         temp = list(filter(lambda x: re.search(ipv6, x) ==
                     None or re.search(ipv4, x) != None, yaml_proxies))
         temp = list(filter(lambda x: re.search(
             "path: /(.*?)\?(.*?)=(.*?)}", x) == None, temp))
-
+        
         temp2 = temp
+        """
+        temp2 = yaml_proxies
         temp = []
         for pr in temp2:
             try:
@@ -123,7 +126,7 @@ class subs:
 
         # todo removed dup
         content_raw = sub_convert.yaml_decode(content_yaml)
-        """
+        
 #         print('decoded content')
 #         print(content_raw)
 
