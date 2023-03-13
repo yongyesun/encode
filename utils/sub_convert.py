@@ -44,7 +44,7 @@ class sub_convert():
                 try:
                     print('Downloading from:' + raw_input)
                     resp = s.get(raw_input, timeout=5)
-                    print("input not list")
+                    print("sub_convert,main:input not list")
                     sub_content = sub_convert.format(
                         resp.content.decode('utf-8'))
                 except Exception as err:
@@ -119,6 +119,7 @@ class sub_convert():
                     return sub_convert.yaml_encode(url_content, output=False)
                 except:
                     print('Sub_content 格式错误')
+                    print('format:no proxies')
                     return '订阅内容解析错误'
 
             elif 'proxies:' in sub_content:  # 对 Clash 内容进行格式化处理
