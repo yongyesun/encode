@@ -93,12 +93,11 @@ class subs:
         content_raw = "\n".join(content_list)
 
         print(f"it's fine till here with {content_list.__len__()} lines")
-
+        
         content_yaml = sub_convert.main(content_raw, 'content', 'YAML', {
             'dup_rm_enabled': True, 'format_name_enabled': True})
-
+        """            
         yaml_proxies = content_yaml.split('\n')[1:]
-        print(yaml_proxies)
         temp = list(filter(lambda x: re.search(ipv6, x) ==
                     None or re.search(ipv4, x) != None, yaml_proxies))
         temp = list(filter(lambda x: re.search(
@@ -115,7 +114,7 @@ class subs:
 
         print(f"found {yaml_proxies.__len__() - temp.__len__()} bad lines :)")
         ###temp###
-        print(temp)
+#        print(temp)
         ##########
         content_yaml = "\n".join(temp)
         if content_yaml[-1:] == '\n':
@@ -124,7 +123,7 @@ class subs:
 
         # todo removed dup
         content_raw = sub_convert.yaml_decode(content_yaml)
-
+        """
 #         print('decoded content')
 #         print(content_raw)
 
