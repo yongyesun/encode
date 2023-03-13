@@ -129,6 +129,7 @@ class sub_convert():
                             '!<str> ', '').replace('!<str>', '')
 
                     try_load = yaml.safe_load(sub_content)
+                    print("format: safe_load Succeed")
                     if output:
                         raise ValueError
                     else:
