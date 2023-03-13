@@ -95,7 +95,7 @@ class subs:
         print(f"it's fine till here with {content_list.__len__()} lines")
         
         content_yaml = sub_convert.main(content_raw, 'content', 'YAML', {
-            'dup_rm_enabled': True, 'format_name_enabled': True})
+            'dup_rm_enabled': False, 'format_name_enabled': False})
                 
         yaml_proxies = content_yaml.split('\n')[1:]
         """
