@@ -44,6 +44,7 @@ class sub_convert():
                 try:
                     print('Downloading from:' + raw_input)
                     resp = s.get(raw_input, timeout=5)
+                    print("input not list")
                     sub_content = sub_convert.format(
                         resp.content.decode('utf-8'))
                 except Exception as err:
