@@ -29,22 +29,24 @@ jobs:
     - name: 执行任务
       run: |
          rm ./output || ls
-         wget ${{ secrets.Check_File4 }} -O ./nodeencode -q
+         #wget ${{ secrets.Check_File4 }} -O ./nodeencode -q
          #base64 ./nodelist > nodeencode -w 0
-         wget ${{ secrets.Check_File3 }} -O ./nodeencode2 -q
-         wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/res/nod-0.txt -O ./nodeencode1
+         #wget ${{ secrets.Check_File3 }} -O ./nodeencode2 -q
+         #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/res/nod-0.txt -O ./nodeencode1
          #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/res/nod-1.txt -O ./nodeencode3
-         wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/o/node.txt -O ./nodeencode4
-         wget -q https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/share/all2 -O ./nodeencode5
+         #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/o/node.txt -O ./nodeencode4
+         #wget -q https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/share/all2 -O ./nodeencode5
+         wget -q https://raw.githubusercontent.com/yongyesun/encode/rename/sub/sub_merge_base64.txt -O ./nodeencode6
          wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz && tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
          rm ./Country.mmdb || ls
          wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
-         mv ./nodeencode ./subconverter
-         mv ./nodeencode1 ./subconverter
-         mv ./nodeencode2 ./subconverter
+         #mv ./nodeencode ./subconverter
+         #mv ./nodeencode1 ./subconverter
+         #mv ./nodeencode2 ./subconverter
          #mv ./nodeencode3 ./subconverter
-         mv ./nodeencode4 ./subconverter
-         mv ./nodeencode5 ./subconverter
+         #mv ./nodeencode4 ./subconverter
+         #mv ./nodeencode5 ./subconverter
+         mv ./nodeencode6 ./subconverter
          cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml && rm ./subconverter/input.yaml
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
          sed -i 's/!<str> //g' ./input.yaml && python main.py
