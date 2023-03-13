@@ -95,18 +95,16 @@ class subs:
         print(f"it's fine till here with {content_list.__len__()} lines")
         
         content_yaml = sub_convert.main(content_raw, 'content', 'YAML', {
-            'dup_rm_enabled': False, 'format_name_enabled': False})
+            'dup_rm_enabled': True, 'format_name_enabled': True})
                 
         yaml_proxies = content_yaml.split('\n')[1:]
-        """
+   
         temp = list(filter(lambda x: re.search(ipv6, x) ==
                     None or re.search(ipv4, x) != None, yaml_proxies))
         temp = list(filter(lambda x: re.search(
             "path: /(.*?)\?(.*?)=(.*?)}", x) == None, temp))
         
         temp2 = temp
-        """
-        temp2 = yaml_proxies
         temp = []
         for pr in temp2:
             try:
@@ -120,8 +118,8 @@ class subs:
 #        print(temp)
         ##########
         content_yaml = "\n".join(temp)
-        #if content_yaml[-1:] == '\n':
-        #    content_yaml[-1:] = ''
+        if content_yaml[-1:] == '\n':
+            content_yaml[-1:] = ''
         content_yaml = 'proxies:\n' + content_yaml
 
         # todo removed dup
