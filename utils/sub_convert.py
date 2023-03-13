@@ -624,6 +624,7 @@ class sub_convert():
             if isinstance(url_content, dict):
                 sub_content = url_content
             else:
+                print("input not dict")
                 sub_content = sub_convert.format(url_content)
 
             print("Formatting Completed!")
