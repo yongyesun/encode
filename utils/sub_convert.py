@@ -136,7 +136,8 @@ class sub_convert():
                     else:
                         content_yaml_dic = try_load
                         return content_yaml_dic  # 返回字典, output 值为 True 时返回修饰过的 YAML 文本
-                except Exception:
+                except Exception as err:
+                    print(f'format,proxies: 发生 {err} 错误')
                     try:
                         sub_content = sub_content.replace(
                             '\'', '').replace('"', '')
