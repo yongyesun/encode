@@ -630,7 +630,7 @@ class sub_convert():
             proxies_list = sub_content['proxies']
             print("1")
             protocol_url = []
-            pirnt("2")
+            print("2")
             # 不同节点订阅链接内容 https://github.com/hoochanlon/fq-book/blob/master/docs/append/srvurl.md
             for index in range(len(proxies_list)):
                 try:
