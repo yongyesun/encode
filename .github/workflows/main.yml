@@ -37,12 +37,6 @@ jobs:
          #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/o/node.txt -O ./nodeencode4
          #wget -q https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/share/all2 -O ./nodeencode5
          #wget -q https://raw.githubusercontent.com/yongyesun/encode/rename/sub/sub_merge_base64.txt -O ./nodeencode6
-         wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/ss.txt -O ./nodeencode7
-         wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/vless.txt -O ./nodeencode8
-         wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/trojan.txt -O ./nodeencode9
-         wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/ssr.txt -O ./nodeencode10
-         wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/vmess.txt -O ./nodelist
-         base64 ./nodelist > nodeencode11 -w 0 || echo "It is a test"
          wget -q https://github.com/tindy2013/subconverter/releases/download/v0.7.2/subconverter_linux32.tar.gz && tar -zxvf subconverter_linux32.tar.gz >/dev/null && rm ./subconverter_linux32.tar.gz
          rm ./Country.mmdb || ls
          wget https://github.com/Dreamacro/maxmind-geoip/raw/release/Country.mmdb -O ./Country.mmdb -q
@@ -53,11 +47,7 @@ jobs:
          #mv ./nodeencode4 ./subconverter
          #mv ./nodeencode5 ./subconverter
          #mv ./nodeencode6 ./subconverter
-         mv ./nodeencode7 ./subconverter
-         mv ./nodeencode8 ./subconverter
-         mv ./nodeencode9 ./subconverter
-         mv ./nodeencode10 ./subconverter
-         mv ./nodeencode11 ./subconverter
+         chmod a+x ./sh.sh && sh ./sh.sh
          cp -rf ./generate.ini ./subconverter && cp ./node_profile.ini ./subconverter && cp ./example_external_config.ini ./subconverter && ./subconverter/subconverter -g --artifact "node" && iconv -f UTF-8 -t UTF-8 -c ./subconverter/input.yaml -o ./input.yaml && rm ./subconverter/input.yaml
          echo "Compile_Date=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
          sed -i 's/!<str> //g' ./input.yaml && sed -i 's/name: :/name: /g' ./input.yaml
