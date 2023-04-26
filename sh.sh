@@ -20,4 +20,5 @@ mv ./nodeencode99 ./subconverter
 mv ./nodeencode98 ./subconverter
 mv ./nodeencode97 ./subconverter
 mv ./nodeencode96 ./subconverter
-echo "url=nodeencode100|nodeencode99|nodeencode98|nodeencode97|nodeencode96|nodeencode11|nodeencode12|nodeencode13|nodeencode14|nodeencode15|nodeencode|nodeencode1" >> node_profile.ini
+echo "url=nodeencode100|nodeencode99|nodeencode98|nodeencode97|nodeencode96|nodeencode11|nodeencode12|nodeencode13|nodeencode14|nodeencode15|nodeencode|nodeencode1" >> ./node_profile.ini
+cat ./node_profile.ini
