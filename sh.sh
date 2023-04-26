@@ -10,3 +10,4 @@ mv ./nodeencode99 ./subconverter
 mv ./nodeencode98 ./subconverter
 mv ./nodeencode97 ./subconverter
 mv ./nodeencode96 ./subconverter
+echo "url=nodeencode100|nodeencode99|nodeencode98|nodeencode97|nodeencode96" >> node_profile.ini
