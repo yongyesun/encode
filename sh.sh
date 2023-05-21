@@ -13,11 +13,11 @@ mv ./nodeencode14 ./subconverter
 mv ./nodeencode15 ./subconverter
 mv ./nodeencode16 ./subconverter
 mv ./nodeencode17 ./subconverter
-wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/ss.txt -O ./nodeencode96
-wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/vless.txt -O ./nodeencode97
-wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/trojan.txt -O ./nodeencode98
-wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/ssr.txt -O ./nodeencode99
-wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted/vmess.txt -O ./nodelist
+wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted-By-Protocol/ss.txt -O ./nodeencode96
+wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted-By-Protocol/vless.txt -O ./nodeencode97
+wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted-By-Protocol/trojan.txt -O ./nodeencode98
+wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted-By-Protocol/ssr.txt -O ./nodeencode99
+wget -q https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Splitted-By-Protocol/vmess.txt -O ./nodelist
 base64 ./nodelist > nodeencode100 -w 0 || echo "It is a test"
 mv ./nodeencode100 ./subconverter
 mv ./nodeencode99 ./subconverter
