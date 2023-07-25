@@ -2,7 +2,7 @@
 #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/res/nod-0.txt -O ./nodeencode11
 #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/res/nod-1.txt -O ./nodeencode12
 #wget -q https://raw.githubusercontent.com/vpei/Free-Node-Merge/main/o/node.txt -O ./nodeencode13
-wget -q https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/share/all2 -O ./nodeencode14
+wget -q https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/share/all3 -O ./nodeencode14
 wget -q https://raw.githubusercontent.com/yongyesun/encode/rename/sub/sub_merge_base64.txt -O ./nodeencode15
 wget -q https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_num -O ./nodeencode16
 wget -q https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_try -O ./nodeencode17
