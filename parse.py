@@ -1,10 +1,12 @@
+import copy
 def makeclash(dictin):
     badprotocols = ['vless']
     proxies = []
     proxies_noname = []
     for y in dictin:
         #try:
-        z = y.copy()
+        #z = y.copy()
+        z = copy.deepcopy(y)
         y.pop('name')
         if y in proxies_noname:
             pass
